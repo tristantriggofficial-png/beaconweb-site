@@ -1,0 +1,28 @@
+# BeaconWeb
+> Hand-coded websites, local SEO, and lead automation for service businesses in the Coachella Valley.
+
+BeaconWeb is a boutique web engineering studio based in La Quinta, California. Founded in 2026 by Tristan Trigg, BeaconWeb builds custom, hand-coded websites for small service businesses — no templates, no page builders, ever. Services include custom web design, monthly maintenance, local SEO, Google Business Profile optimization, lead automation (missed call text-backs, review requests), paid advertising management (Google Ads and Meta Ads), and AI-generated renderings.
+
+BeaconWeb serves businesses throughout the Coachella Valley: La Quinta, Palm Desert, Palm Springs, Indio, Cathedral City, Rancho Mirage, Indian Wells, and surrounding areas.
+
+## Services
+
+- [Web Design Packages](https://beaconweb.co/packages) — Starter ($347 setup + $97/mo), Growth ($697 setup + $197/mo), Full Presence ($997 setup + $347/mo)
+- [Marketing & Paid Ads](https://beaconweb.co/marketing) — Google Ads and Meta Ads management starting at $500/mo
+- [Portfolio](https://beaconweb.co/portfolio) — K&R Car Wash (krcarwash.com), Overcast Industriez (overcastindustriez.com)
+- [About BeaconWeb](https://beaconweb.co/about)
+- [FAQ](https://beaconweb.co/faq)
+- [Contact](https://beaconweb.co/contact)
+
+## Key Facts
+
+- Location: La Quinta, CA 92253
+- Service area: Coachella Valley, California
+- Founded: 2026
+- Owner: Tristan Trigg
+- Contact: tristantrigg@beaconweb.co | (541) 291-7030
+- Approach: Hand-coded only. No templates, no WordPress, no page builders.
+- Specialty: Service businesses — HVAC, plumbers, car washes, landscapers, roofers, salons, restaurants
+- Pricing: Transparent — $347–$997 setup + $97–$347/mo ongoing
+- Turnaround: 2–4 weeks typical build time
+- PageSpeed: 90+ scores standard on all builds

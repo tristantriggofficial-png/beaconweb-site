@@ -1,0 +1,85 @@
+/* ============================================================
+   BEACON WEB — Animation Initial States
+   GSAP handles the actual animation; CSS sets starting states
+   ============================================================ */
+
+/* Elements start invisible until GSAP kicks in */
+.js-loaded .gsap-init { opacity: 0; }
+
+/* ── Hero word-split ──────────────────────────────────────── */
+.hero-headline .word {
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 0.25em;
+}
+
+.hero-headline .word-inner {
+  display: inline-block;
+  transform: translateY(110%);
+}
+
+/* ── Logo letter-split ────────────────────────────────────── */
+.logo-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* ── Section heading clip reveal ──────────────────────────── */
+.section-heading-wrap {
+  overflow: hidden;
+}
+
+.section-heading-inner {
+  transform: translateY(105%);
+}
+
+/* ── Stagger cards: starting invisible ────────────────────── */
+.stagger-card {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* ── Process steps alternating ────────────────────────────── */
+.process-step.from-left {
+  opacity: 0;
+  transform: translateX(-60px);
+}
+
+.process-step.from-right {
+  opacity: 0;
+  transform: translateX(60px);
+}
+
+/* ── Stat counter ─────────────────────────────────────────── */
+.stat-counter {
+  opacity: 0;
+}
+
+/* ── Fade in on scroll ────────────────────────────────────── */
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ── Package card ─────────────────────────────────────────── */
+.package-card-animate {
+  opacity: 0;
+  transform: translateY(50px) scale(0.97);
+}
+
+/* Disable all animations if reduced motion preferred */
+@media (prefers-reduced-motion: reduce) {
+  .hero-headline .word-inner,
+  .logo-letter,
+  .section-heading-inner,
+  .stagger-card,
+  .process-step.from-left,
+  .process-step.from-right,
+  .stat-counter,
+  .scroll-fade,
+  .package-card-animate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

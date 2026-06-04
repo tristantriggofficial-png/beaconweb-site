@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeaconWeb — Hand-Coded Websites & Local SEO | Coachella Valley</title>
+  <meta name="description" content="Hand-coded websites, local SEO, and lead automation for service businesses in the Coachella Valley. Based in La Quinta, CA. No templates, ever. Starting at $347." />
+  <link rel="canonical" href="https://beaconweb.co/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BeaconWeb" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="BeaconWeb — Hand-Coded Websites & Local SEO | Coachella Valley" />
+  <meta property="og:description" content="Hand-coded websites, local SEO, and lead automation for service businesses in the Coachella Valley. Based in La Quinta, CA. Starting at $347." />
+  <meta property="og:url" content="https://beaconweb.co/" />
+  <meta property="og:image" content="https://beaconweb.co/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BeaconWeb — Coachella Valley Web Design" />
+  <meta name="twitter:description" content="Hand-coded websites for service businesses in the Coachella Valley. No templates, ever." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- LocalBusiness + Organization Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://beaconweb.co/#business",
+        "name": "BeaconWeb",
+        "description": "Hand-coded websites, local SEO, and lead automation for service businesses in the Coachella Valley.",
+        "url": "https://beaconweb.co",
+        "telephone": "(541) 291-7030",
+        "email": "tristantrigg@beaconweb.co",
+        "founder": "Tristan Trigg",
+        "foundingDate": "2026",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "La Quinta",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "areaServed": [
+          "La Quinta, CA",
+          "Palm Desert, CA",
+          "Palm Springs, CA",
+          "Indio, CA",
+          "Cathedral City, CA",
+          "Rancho Mirage, CA",
+          "Indian Wells, CA",
+          "Coachella Valley, CA"
+        ],
+        "serviceType": [
+          "Web Design",
+          "Web Development",
+          "Local SEO",
+          "Lead Automation",
+          "Google Ads Management",
+          "Meta Ads Management",
+          "Monthly Website Maintenance"
+        ],
+        "priceRange": "$$",
+        "openingHours": "Mo-Su 00:00-23:59",
+        "sameAs": [
+          "https://beaconweb.co"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://beaconweb.co/#website",
+        "url": "https://beaconweb.co",
+        "name": "BeaconWeb",
+        "publisher": { "@id": "https://beaconweb.co/#business" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition"></div>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+
+  <!-- ═══════════════════ NAV ═══════════════════ -->
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-logo" aria-label="BeaconWeb home">
+      <span class="nav-logo-main">BEACONWEB</span>
+      <span class="nav-logo-sub">Web Engineering</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="portfolio.html" class="nav-link">Portfolio</a>
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Packages
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 4l4 4 4-4" />
+          </svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="packages.html" class="nav-dropdown-item" role="menuitem">Web Design</a>
+          <a href="marketing.html" class="nav-dropdown-item" role="menuitem">Marketing & Ads</a>
+        </div>
+      </div>
+
+      <a href="about.html" class="nav-link">About</a>
+      <a href="faq.html" class="nav-link">FAQ</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-cta">Begin →</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile overlay menu -->
+  <div class="nav-mobile" role="dialog" aria-label="Mobile menu">
+    <nav class="nav-mobile-links">
+      <a href="index.html" class="nav-mobile-link">Home</a>
+      <a href="portfolio.html" class="nav-mobile-link">Portfolio</a>
+      <a href="packages.html" class="nav-mobile-link">Web Design</a>
+      <a href="marketing.html" class="nav-mobile-link">Marketing</a>
+      <a href="about.html" class="nav-mobile-link">About</a>
+      <a href="faq.html" class="nav-mobile-link">FAQ</a>
+      <a href="contact.html" class="nav-mobile-link">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav-mobile-cta">Begin a Project →</a>
+    <p class="nav-mobile-contact">tristantrigg@beaconweb.co · (541) 291-7030</p>
+  </div>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section class="hero" style="position:relative;min-height:100vh;display:flex;align-items:center;padding-top:100px;overflow:hidden;">
+
+    <!-- Background grid + glow -->
+    <div style="position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:0.3;pointer-events:none;"></div>
+    <div style="position:absolute;top:20%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(245,166,35,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+
+    <div class="container" style="position:relative;z-index:1;padding-top:4rem;padding-bottom:6rem;">
+
+      <!-- Status badge -->
+      <div class="hero-badge" style="opacity:0;transform:translateY(20px);display:inline-flex;align-items:center;gap:10px;background:rgba(245,166,35,0.08);border:1px solid rgba(245,166,35,0.2);padding:8px 20px;border-radius:100px;margin-bottom:2rem;">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--amber);flex-shrink:0;animation:pulse 2s infinite;"></span>
+        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber);">Open for new projects</span>
+      </div>
+
+      <!-- Headline — GSAP splits word by word -->
+      <h1 class="hero-headline" style="max-width:900px;margin-bottom:1.5rem;">
+        Most local businesses are invisible online. We fix that.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="hero-sub" style="opacity:0;transform:translateY(20px);max-width:600px;font-size:clamp(1rem,1.8vw,1.2rem);color:var(--gray-2);line-height:1.7;margin-bottom:2.5rem;">
+        Hand-coded websites, local SEO, and lead automation for service businesses in the Coachella Valley. Built to get you found — and keep customers coming back.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-cta btn-group" style="opacity:0;transform:translateY(20px);margin-bottom:3rem;">
+        <a href="packages.html" class="btn btn-primary btn-lg">See Packages</a>
+        <a href="contact.html" class="btn btn-ghost btn-lg">Contact Us</a>
+      </div>
+
+      <!-- Badge row -->
+      <div class="hero-badge" style="opacity:0;transform:translateY(20px);display:flex;align-items:center;gap:2rem;font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-4);">
+        <span>Est. 2026</span>
+        <span style="color:var(--border-2);">·</span>
+        <span>Web Design</span>
+        <span style="color:var(--border-2);">·</span>
+        <span>Digital Presence</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ INDUSTRY TICKER ═══════════════════ -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-item">N <span class="dot">·</span> Car Washes <span class="dot">·</span> Auto Detailers <span class="dot">·</span> Window Tinters <span class="dot">·</span> Plumbers <span class="dot">·</span> HVAC <span class="dot">·</span> Roofers <span class="dot">·</span> Landscapers <span class="dot">·</span> Salons <span class="dot">·</span> Restaurants <span class="dot">·</span> Local Service Businesses <span class="dot">·</span> E <span class="dot">·</span> Web Design <span class="dot">·</span> Local SEO <span class="dot">·</span> Lead Automation <span class="dot">·</span> Coachella Valley <span class="dot">·</span> S <span class="dot">·</span> Car Washes <span class="dot">·</span> Auto Detailers <span class="dot">·</span> Window Tinters <span class="dot">·</span> Plumbers <span class="dot">·</span> HVAC <span class="dot">·</span> Roofers <span class="dot">·</span> W <span class="dot">·</span> Web Design <span class="dot">·</span> Local SEO <span class="dot">·</span> Lead Automation <span class="dot">·</span></div>
+      <div class="ticker-item" aria-hidden="true">N <span class="dot">·</span> Car Washes <span class="dot">·</span> Auto Detailers <span class="dot">·</span> Window Tinters <span class="dot">·</span> Plumbers <span class="dot">·</span> HVAC <span class="dot">·</span> Roofers <span class="dot">·</span> Landscapers <span class="dot">·</span> Salons <span class="dot">·</span> Restaurants <span class="dot">·</span> Local Service Businesses <span class="dot">·</span> E <span class="dot">·</span> Web Design <span class="dot">·</span> Local SEO <span class="dot">·</span> Lead Automation <span class="dot">·</span> Coachella Valley <span class="dot">·</span> S <span class="dot">·</span> Car Washes <span class="dot">·</span> Auto Detailers <span class="dot">·</span> Window Tinters <span class="dot">·</span> Plumbers <span class="dot">·</span> HVAC <span class="dot">·</span> Roofers <span class="dot">·</span> W <span class="dot">·</span> Web Design <span class="dot">·</span> Local SEO <span class="dot">·</span> Lead Automation <span class="dot">·</span></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ STATS ═══════════════════ -->
+  <section class="section--sm">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number"><span data-count="0" data-suffix="">0</span></span>
+          <span class="stat-label">Templates Used. Ever.</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number"><span data-count="24" data-suffix="h">24h</span></span>
+          <span class="stat-label">Response Guarantee</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number"><span data-count="5" data-suffix="★">5★</span></span>
+          <span class="stat-label">Client Satisfaction</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number"><span data-count="90" data-suffix="+">90+</span></span>
+          <span class="stat-label">PageSpeed Score</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SERVICES ═══════════════════ -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">No. 01</span>
+      <h2>What we make.</h2>
+      <p class="scroll-fade" style="max-width:580px;margin-top:1rem;margin-bottom:3rem;">Everything a service business needs to look credible, get found, and capture leads — fully managed so you never have to touch a thing.</p>
+
+      <div class="grid-3">
+        <div class="service-card stagger-card">
+          <div class="service-number">01</div>
+          <h3 class="service-name">Custom Websites</h3>
+          <p class="service-desc">Sites built from scratch that load fast and rank well. No shared templates — every line of code is yours.</p>
+          <div class="service-tags">
+            <span class="service-tag">Mobile-first</span>
+            <span class="service-tag">SEO</span>
+            <span class="service-tag">Performance</span>
+          </div>
+        </div>
+
+        <div class="service-card stagger-card">
+          <div class="service-number">02</div>
+          <h3 class="service-name">Monthly Maintenance</h3>
+          <p class="service-desc">Updates, security monitoring, uptime checks, and your allotted edits — handled every month without you lifting a finger.</p>
+          <div class="service-tags">
+            <span class="service-tag">Security</span>
+            <span class="service-tag">Monitoring</span>
+            <span class="service-tag">Edits</span>
+          </div>
+        </div>
+
+        <div class="service-card stagger-card">
+          <div class="service-number">03</div>
+          <h3 class="service-name">SEO & Google Business</h3>
+          <p class="service-desc">Get found locally. We optimize your Google Business profile and structure your site to rank for the searches that matter.</p>
+          <div class="service-tags">
+            <span class="service-tag">On-page SEO</span>
+            <span class="service-tag">Local</span>
+            <span class="service-tag">Schema</span>
+          </div>
+        </div>
+
+        <div class="service-card stagger-card">
+          <div class="service-number">04</div>
+          <h3 class="service-name">Lead Automation</h3>
+          <p class="service-desc">Missed call text-backs and automated review requests after every job. Your business works even when you're off the clock.</p>
+          <div class="service-tags">
+            <span class="service-tag">Text-back</span>
+            <span class="service-tag">Reviews</span>
+            <span class="service-tag">CRM</span>
+          </div>
+        </div>
+
+        <div class="service-card stagger-card">
+          <div class="service-number">05</div>
+          <h3 class="service-name">Marketing & Paid Ads</h3>
+          <p class="service-desc">Google Ads, Meta campaigns, and retargeting — managed end-to-end so every dollar works harder.</p>
+          <div class="service-tags">
+            <span class="service-tag">Google Ads</span>
+            <span class="service-tag">Meta</span>
+            <span class="service-tag">Retargeting</span>
+          </div>
+        </div>
+
+        <div class="service-card stagger-card">
+          <div class="service-number">08</div>
+          <h3 class="service-name">AI Renderings</h3>
+          <p class="service-desc">Photorealistic AI-generated visuals for your business — product shots, space renderings, and marketing imagery.</p>
+          <div class="service-tags">
+            <span class="service-tag">Product</span>
+            <span class="service-tag">Space</span>
+            <span class="service-tag">Coming Soon</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PACKAGES PREVIEW ═══════════════════ -->
+  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <span class="section-label">No. 02</span>
+      <h2>Three ways to begin.</h2>
+      <p class="scroll-fade" style="max-width:560px;margin-top:1rem;margin-bottom:3rem;">Transparent pricing. No hidden fees. One-time setup, then a flat monthly rate. No surprises, no lock-in contracts.</p>
+
+      <div class="grid-3">
+        <div class="package-card package-card-animate">
+          <p class="package-number">Package 01</p>
+          <h3 class="package-name">Starter</h3>
+          <p class="package-desc">A clean, professional website that gets you online and captures leads. Simple, fast, done.</p>
+          <div class="package-price">
+            <div class="package-price-setup"><span class="currency">$</span>347</div>
+            <div class="package-price-monthly">one-time setup · then <strong>$97/mo</strong></div>
+          </div>
+          <ul class="package-features">
+            <li class="package-feature">Up to 5 pages</li>
+            <li class="package-feature">Inquiry and contact form</li>
+            <li class="package-feature">Mobile responsive design</li>
+            <li class="package-feature">Basic speed optimization</li>
+            <li class="package-feature">Google Analytics setup</li>
+            <li class="package-feature">Fast, hand-coded — no templates</li>
+          </ul>
+          <a href="packages.html" class="btn btn-ghost">Get Started</a>
+        </div>
+
+        <div class="package-card package-card-animate featured">
+          <div class="package-badge">Most Popular</div>
+          <p class="package-number">Package 02</p>
+          <h3 class="package-name">Growth</h3>
+          <p class="package-desc">A website built to convert visitors into calls and bookings. Optimized for Google, built for leads.</p>
+          <div class="package-price">
+            <div class="package-price-setup"><span class="currency">$</span>697</div>
+            <div class="package-price-monthly">one-time setup · then <strong>$197/mo</strong></div>
+          </div>
+          <ul class="package-features">
+            <li class="package-feature">Everything in Starter, plus</li>
+            <li class="package-feature">Up to 10 pages + landing pages</li>
+            <li class="package-feature">Lead capture + CRM integration</li>
+            <li class="package-feature">Core Web Vitals optimization</li>
+            <li class="package-feature">On-page SEO — titles, meta, schema</li>
+            <li class="package-feature">Google Business Profile setup</li>
+            <li class="package-feature">ADA accessibility compliance</li>
+          </ul>
+          <a href="packages.html" class="btn btn-primary">Get Started</a>
+        </div>
+
+        <div class="package-card package-card-animate">
+          <p class="package-number">Package 03</p>
+          <h3 class="package-name">Full Presence</h3>
+          <p class="package-desc">Everything we offer. Website, automations, SEO, reviews, AI, social — completely managed.</p>
+          <div class="package-price">
+            <div class="package-price-setup"><span class="currency">$</span>997</div>
+            <div class="package-price-monthly">one-time setup · then <strong>$347/mo</strong></div>
+          </div>
+          <ul class="package-features">
+            <li class="package-feature">Everything in Growth, plus</li>
+            <li class="package-feature">Unlimited pages</li>
+            <li class="package-feature">Automated Google review requests</li>
+            <li class="package-feature">Appointment booking integration</li>
+            <li class="package-feature">Local SEO — citations + Maps ranking</li>
+            <li class="package-feature">Competitor monitoring</li>
+            <li class="package-feature">Monthly strategy call</li>
+          </ul>
+          <a href="packages.html" class="btn btn-ghost">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ PROCESS ═══════════════════ -->
+  <section class="section">
+    <div class="container">
+      <span class="section-label">No. 03</span>
+      <h2>From first call to launch.</h2>
+      <p class="scroll-fade" style="max-width:560px;margin-top:1rem;margin-bottom:3rem;">Four steps. Two to four weeks, typically. You work directly with us from kickoff through launch — no hand-offs, no surprises.</p>
+
+      <div>
+        <div class="process-step">
+          <div class="process-number">01</div>
+          <div class="process-content">
+            <h3 class="process-title">Consult</h3>
+            <p class="process-desc">Free discovery call to understand your business, then a quick intake form and handoff of your assets — logo, photos, content.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">02</div>
+          <div class="process-content">
+            <h3 class="process-title">Design & Build</h3>
+            <p class="process-desc">50% deposit. We design and build your site from scratch — no templates, no page builders. Clean code built for speed.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">03</div>
+          <div class="process-content">
+            <h3 class="process-title">Review</h3>
+            <p class="process-desc">We walk through every page together and refine until you're 100% satisfied. No time limit on this phase.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">04</div>
+          <div class="process-content">
+            <h3 class="process-title">Launch</h3>
+            <p class="process-desc">Final 50% due. We connect your domain, configure email, set up analytics, and go live. Ongoing care handled monthly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ WHY BEACONWEB ═══════════════════ -->
+  <section class="section" style="background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <span class="section-label">No. 04</span>
+      <h2>Why BeaconWeb.</h2>
+
+      <div class="why-grid" style="margin-top:2.5rem;">
+        <div class="why-item">
+          <div class="why-roman">i.</div>
+          <div class="why-title">Fast & done right</div>
+          <p class="why-desc">Clean, speed-optimized code. No bloated templates. Sites that load fast and make Google take notice.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-roman">ii.</div>
+          <div class="why-title">Local SEO first</div>
+          <p class="why-desc">We structure your site and Google Business Profile so nearby customers find you first — every single time they search.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-roman">iii.</div>
+          <div class="why-title">Automation built in</div>
+          <p class="why-desc">Missed call text-backs, review requests, AI chatbots — your business keeps working even when you're not.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-roman">iv.</div>
+          <div class="why-title">Full transparency</div>
+          <p class="why-desc">Monthly reports that actually make sense. You'll always know what we've done and how your site is performing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CTA ═══════════════════ -->
+  <section class="section">
+    <div class="container" style="text-align:center;max-width:700px;margin:0 auto;">
+      <span class="section-label">No. 05</span>
+      <h2 class="scroll-fade">Ready to be found?</h2>
+      <p class="scroll-fade" style="margin-top:1.25rem;margin-bottom:2.5rem;">Let's build your online presence the right way — fast, professional, and built to grow with you. Free consultation, no pressure, no hard sell.</p>
+      <div class="btn-group scroll-fade" style="justify-content:center;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+        <a href="packages.html" class="btn btn-ghost btn-lg">View Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer style="background:var(--bg-2);border-top:1px solid var(--border);padding:4rem 0 2rem;">
+    <!-- Footer grid background -->
+    <div style="position:absolute;width:100%;height:100%;inset:0;background-image:linear-gradient(var(--bg-3) 1px,transparent 1px),linear-gradient(90deg,var(--bg-3) 1px,transparent 1px);background-size:40px 40px;opacity:0.5;pointer-events:none;"></div>
+    <div class="container" style="position:relative;">
+      <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;">
+        <div>
+          <div style="font-family:var(--font-head);font-size:2rem;letter-spacing:0.08em;color:var(--white);margin-bottom:1rem;">BEACONWEB</div>
+          <p style="font-size:0.85rem;color:var(--gray-3);max-width:280px;line-height:1.7;margin-bottom:1.5rem;">Hand-coded websites and automation for local businesses in the Coachella Valley.</p>
+          <a href="contact.html" class="btn btn-primary btn-sm">Begin a Project →</a>
+        </div>
+        <div>
+          <h4 style="font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-3);margin-bottom:1rem;">Navigation</h4>
+          <ul style="display:flex;flex-direction:column;gap:0.6rem;">
+            <li><a href="index.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">Home</a></li>
+            <li><a href="portfolio.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">Portfolio</a></li>
+            <li><a href="about.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">About</a></li>
+            <li><a href="faq.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">FAQ</a></li>
+            <li><a href="privacy.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-3);margin-bottom:1rem;">Services</h4>
+          <ul style="display:flex;flex-direction:column;gap:0.6rem;">
+            <li><a href="packages.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">Custom Websites</a></li>
+            <li><a href="packages.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">SEO & Google</a></li>
+            <li><a href="marketing.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">Marketing & Ads</a></li>
+            <li><a href="packages.html" style="font-size:0.85rem;color:var(--gray-2);transition:color var(--transition);" onmouseover="this.style.color='var(--amber)'" onmouseout="this.style.color='var(--gray-2)'">Lead Automation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--gray-3);margin-bottom:1rem;">Contact</h4>
+          <ul style="display:flex;flex-direction:column;gap:0.6rem;">
+            <li><a href="mailto:tristantrigg@beaconweb.co" style="font-size:0.85rem;color:var(--gray-2);">tristantrigg@beaconweb.co</a></li>
+            <li><a href="tel:+15412917030" style="font-size:0.85rem;color:var(--gray-2);">(541) 291-7030</a></li>
+            <li style="font-size:0.85rem;color:var(--gray-4);">La Quinta, CA · Open 24/7</li>
+            <li style="font-size:0.85rem;color:var(--gray-4);">Serving the Coachella Valley</li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid var(--border);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+        <p style="font-size:0.75rem;color:var(--gray-4);">© 2026 BeaconWeb. All rights reserved.</p>
+        <p style="font-size:0.75rem;color:var(--gray-4);letter-spacing:0.1em;text-transform:uppercase;">Est. 2026 · Web Design · Digital Presence</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Site JS -->
+  <script src="js/ticker.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+
+  <style>
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+    @media(max-width:768px){footer .container>div:first-child{grid-template-columns:1fr 1fr!important}footer .container>div:first-child>div:first-child{grid-column:1/-1}}
+  </style>
+</body>
+</html>
