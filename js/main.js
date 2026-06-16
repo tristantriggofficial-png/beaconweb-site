@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroHeadline && window.gsap && window.ScrollTrigger) {
     gsap.registerPlugin(ScrollTrigger);
     const words = heroHeadline.querySelectorAll('.word');
+    gsap.set(words, { opacity: 0, y: 40 });
     gsap.to(words, {
       opacity: 1,
       y: 0,
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- GSAP: automation cards stagger --- */
   const autoCards = document.querySelectorAll('.auto-card');
   if (autoCards.length && window.gsap && window.ScrollTrigger) {
+    gsap.set(autoCards, { opacity: 0, y: 30 });
     ScrollTrigger.create({
       trigger: '.automations-grid',
       start: 'top 80%',
@@ -104,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- GSAP: process steps slide in --- */
   const steps = document.querySelectorAll('.step');
   if (steps.length && window.gsap && window.ScrollTrigger) {
+    gsap.set(steps, { opacity: 0, x: -30 });
     steps.forEach((step, i) => {
       ScrollTrigger.create({
         trigger: step,
