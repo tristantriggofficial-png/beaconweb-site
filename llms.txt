@@ -1,28 +1,44 @@
 # BeaconWeb
-> Hand-coded websites, local SEO, and lead automation for service businesses in the Coachella Valley.
+> Business automation agency specializing in lead-to-appointment systems for service businesses.
 
-BeaconWeb is a boutique web engineering studio based in La Quinta, California. Founded in 2026 by Tristan Trigg, BeaconWeb builds custom, hand-coded websites for small service businesses — no templates, no page builders, ever. Services include custom web design, monthly maintenance, local SEO, Google Business Profile optimization, lead automation (missed call text-backs, review requests), paid advertising management (Google Ads and Meta Ads), and AI-generated renderings.
+BeaconWeb builds automated systems that turn leads into booked appointments — without the business owner lifting a finger. The flagship offering is the Lead-to-Appointment System, built in GoHighLevel.
 
-BeaconWeb serves businesses throughout the Coachella Valley: La Quinta, Palm Desert, Palm Springs, Indio, Cathedral City, Rancho Mirage, Indian Wells, and surrounding areas.
+## Owner
+- Tristan Trigg
+- Email: tristantrigg@beaconweb.co
+- Phone: (541) 291-7030
+- Location: La Quinta, CA — Coachella Valley
 
-## Services
+## Core Offering: Lead-to-Appointment System
+A complete automation built in GoHighLevel with 8 components:
+1. Lead Capture — all channels, one inbox
+2. Instant SMS Response — under 60 seconds, every time
+3. AI Qualification — filters serious leads automatically
+4. Follow-Up Sequences — 7-day automated touches
+5. Missed Call Text-Back — every missed call gets an instant text
+6. Calendar Booking — leads book themselves
+7. Pipeline Tracking — real-time visibility on every lead
+8. Review Requests — automated after every completed job
 
-- [Web Design Packages](https://beaconweb.co/packages) — Starter ($347 setup + $97/mo), Growth ($697 setup + $197/mo), Full Presence ($997 setup + $347/mo)
-- [Marketing & Paid Ads](https://beaconweb.co/marketing) — Google Ads and Meta Ads management starting at $500/mo
-- [Portfolio](https://beaconweb.co/portfolio) — K&R Car Wash (krcarwash.com), Overcast Industriez (overcastindustriez.com)
-- [About BeaconWeb](https://beaconweb.co/about)
-- [FAQ](https://beaconweb.co/faq)
-- [Contact](https://beaconweb.co/contact)
+## Target Clients
+Service businesses where missed leads = missed revenue: HVAC, plumbing, roofing, landscaping, med spas, dental practices, real estate agents, auto detailers, home services, solar, law firms, insurance agents.
 
-## Key Facts
+## Key Claim
+"Every lead gets a response in under a minute. Every missed call gets followed up. Every job gets a review request. Automatically."
 
-- Location: La Quinta, CA 92253
-- Service area: Coachella Valley, California
-- Founded: 2026
-- Owner: Tristan Trigg
-- Contact: tristantrigg@beaconweb.co | (541) 291-7030
-- Approach: Hand-coded only. No templates, no WordPress, no page builders.
-- Specialty: Service businesses — HVAC, plumbers, car washes, landscapers, roofers, salons, restaurants
-- Pricing: Transparent — $347–$997 setup + $97–$347/mo ongoing
-- Turnaround: 2–4 weeks typical build time
-- PageSpeed: 90+ scores standard on all builds
+## Pricing
+Three tiers: Core System / Full System / Full System + Reviews. Setup fee + monthly management. No long-term contracts.
+
+## Pages
+- Home: https://beaconweb.co/
+- The System: https://beaconweb.co/the-system.html
+- Pricing: https://beaconweb.co/pricing.html
+- About: https://beaconweb.co/about.html
+- FAQ: https://beaconweb.co/faq.html
+- Contact: https://beaconweb.co/contact.html
+
+## Technology
+- GoHighLevel (CRM, automation, SMS, calendar, pipeline)
+- HTML/CSS/JS (custom-coded website)
+- Netlify (hosting)
+- GitHub (version control)

@@ -1,29 +1,25 @@
 User-agent: *
 Allow: /
 
-# AI crawlers — explicitly allowed
-User-agent: GPTBot
-Allow: /
+# Priority pages for crawlers
+Allow: /index.html
+Allow: /the-system.html
+Allow: /pricing.html
+Allow: /about.html
+Allow: /faq.html
+Allow: /contact.html
 
-User-agent: ChatGPT-User
+# AI crawlers — welcome
+User-agent: GPTBot
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Googlebot
-Allow: /
-
-User-agent: CCBot
+User-agent: PerplexityBot
 Allow: /
 
 Sitemap: https://beaconweb.co/sitemap.xml

@@ -1,150 +1,182 @@
 /* ============================================================
-   BEACON WEB — Main JS
-   Nav scroll, hamburger menu, magnetic cursor, page transitions
+   BEACONWEB — Main JS v2.0  |  2026-06-16
+   Nav, GSAP animations, counters, FAQ, forms
    ============================================================ */
 
-'use strict';
-
 document.addEventListener('DOMContentLoaded', () => {
-  initNav();
-  initHamburger();
-  initCursor();
-  initPageTransitions();
-  initDropdown();
-  document.documentElement.classList.add('js-loaded');
-});
 
-/* ── Nav scroll behavior ──────────────────────────────────── */
-function initNav() {
-  const nav = document.querySelector('.nav');
-  if (!nav) return;
+  /* --- Nav: scroll darken --- */
+  const navbar = document.getElementById('navbar');
+  if (navbar) {
+    const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 
-  const onScroll = () => {
-    if (window.scrollY > 80) {
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
+  /* --- Nav: hamburger / mobile --- */
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+  if (hamburger && navMobile) {
+    hamburger.addEventListener('click', () => {
+      const open = navMobile.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navMobile.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navMobile.classList.remove('open');
+        hamburger.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* --- Active nav link --- */
+  const currentPage = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .nav-mobile a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      a.classList.add('active');
     }
-  };
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-}
-
-/* ── Hamburger / mobile overlay ───────────────────────────── */
-function initHamburger() {
-  const toggle     = document.querySelector('.nav-hamburger');
-  const mobileMenu = document.querySelector('.nav-mobile');
-  const body       = document.body;
-
-  if (!toggle || !mobileMenu) return;
-
-  toggle.addEventListener('click', () => {
-    const isOpen = toggle.classList.toggle('active');
-    mobileMenu.classList.toggle('open', isOpen);
-    body.classList.toggle('menu-open', isOpen);
-    toggle.setAttribute('aria-expanded', isOpen);
   });
 
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      mobileMenu.classList.remove('open');
-      body.classList.remove('menu-open');
-      toggle.setAttribute('aria-expanded', 'false');
+  /* --- GSAP: hero headline word split --- */
+  const heroHeadline = document.querySelector('.hero-headline');
+  if (heroHeadline && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    const words = heroHeadline.querySelectorAll('.word');
+    gsap.to(words, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.07,
+      duration: 0.7,
+      ease: 'power3.out',
+      delay: 0.2
+    });
+  }
+
+  /* --- GSAP: stat counters --- */
+  const statNumbers = document.querySelectorAll('[data-count]');
+  if (statNumbers.length && window.gsap && window.ScrollTrigger) {
+    statNumbers.forEach(el => {
+      const target = parseFloat(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const decimals = el.dataset.decimals ? parseInt(el.dataset.decimals) : 0;
+      const obj = { val: 0 };
+      ScrollTrigger.create({
+        trigger: el,
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.to(obj, {
+            val: target,
+            duration: 2,
+            ease: 'power2.out',
+            onUpdate: () => {
+              el.textContent = prefix + obj.val.toFixed(decimals) + suffix;
+            }
+          });
+        }
+      });
+    });
+  }
+
+  /* --- GSAP: automation cards stagger --- */
+  const autoCards = document.querySelectorAll('.auto-card');
+  if (autoCards.length && window.gsap && window.ScrollTrigger) {
+    ScrollTrigger.create({
+      trigger: '.automations-grid',
+      start: 'top 80%',
+      once: true,
+      onEnter: () => {
+        gsap.to(autoCards, {
+          opacity: 1,
+          y: 0,
+          stagger: 0.08,
+          duration: 0.6,
+          ease: 'power2.out'
+        });
+      }
+    });
+  }
+
+  /* --- GSAP: process steps slide in --- */
+  const steps = document.querySelectorAll('.step');
+  if (steps.length && window.gsap && window.ScrollTrigger) {
+    steps.forEach((step, i) => {
+      ScrollTrigger.create({
+        trigger: step,
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.to(step, {
+            opacity: 1,
+            x: 0,
+            duration: 0.6,
+            delay: i * 0.1,
+            ease: 'power2.out'
+          });
+        }
+      });
+    });
+  }
+
+  /* --- GSAP: fade-in sections --- */
+  document.querySelectorAll('[data-fade]').forEach(el => {
+    if (!window.gsap || !window.ScrollTrigger) return;
+    gsap.set(el, { opacity: 0, y: 24 });
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 88%',
+      once: true,
+      onEnter: () => {
+        gsap.to(el, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' });
+      }
     });
   });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      toggle.classList.remove('active');
-      mobileMenu.classList.remove('open');
-      body.classList.remove('menu-open');
-    }
-  });
-}
-
-/* ── Packages dropdown ────────────────────────────────────── */
-function initDropdown() {
-  const dropdown = document.querySelector('.nav-dropdown');
-  if (!dropdown) return;
-
-  const toggle = dropdown.querySelector('.nav-dropdown-toggle');
-
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    dropdown.classList.toggle('open');
+  /* --- FAQ accordion --- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const q = item.querySelector('.faq-q');
+    if (!q) return;
+    q.addEventListener('click', () => {
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(open => open.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
   });
 
-  document.addEventListener('click', () => dropdown.classList.remove('open'));
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') dropdown.classList.remove('open');
-  });
-}
-
-/* ── Magnetic cursor ──────────────────────────────────────── */
-function initCursor() {
-  const dot  = document.querySelector('.cursor-dot');
-  const ring = document.querySelector('.cursor-ring');
-
-  if (!dot || !ring) return;
-  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-
-  let mouseX = 0, mouseY = 0;
-  let ringX  = 0, ringY  = 0;
-
-  const lerp = (a, b, t) => a + (b - a) * t;
-
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
-  const loop = () => {
-    dot.style.transform  = `translate(${mouseX}px, ${mouseY}px)`;
-    ringX = lerp(ringX, mouseX, 0.12);
-    ringY = lerp(ringY, mouseY, 0.12);
-    ring.style.transform = `translate(${ringX}px, ${ringY}px)`;
-    requestAnimationFrame(loop);
-  };
-  requestAnimationFrame(loop);
-
-  document.querySelectorAll('a, button, [role="button"], .btn').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('is-hovering'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('is-hovering'));
-  });
-
-  document.addEventListener('mouseleave', () => {
-    dot.style.opacity = '0';
-    ring.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    dot.style.opacity = '1';
-    ring.style.opacity = '1';
-  });
-}
-
-/* ── Page transitions ─────────────────────────────────────── */
-function initPageTransitions() {
-  const overlay = document.querySelector('.page-transition');
-  if (!overlay) return;
-
-  overlay.style.opacity = '1';
-  requestAnimationFrame(() => {
-    overlay.style.transition = 'opacity 0.4s ease';
-    overlay.style.opacity = '0';
-  });
-
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') ||
-        href.startsWith('tel:') || href.startsWith('http')) return;
-
-    link.addEventListener('click', e => {
+  /* --- Contact form --- */
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      overlay.style.transition = 'opacity 0.3s ease';
-      overlay.style.opacity = '1';
-      setTimeout(() => { window.location.href = href; }, 300);
+      const btn = contactForm.querySelector('[type="submit"]');
+      const successEl = document.getElementById('formSuccess');
+      const data = Object.fromEntries(new FormData(contactForm));
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        const webhookUrl = contactForm.dataset.webhook;
+        if (webhookUrl && !webhookUrl.includes('YOUR_')) {
+          await fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+            mode: 'no-cors'
+          });
+        }
+        contactForm.style.display = 'none';
+        if (successEl) successEl.style.display = 'block';
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+        alert('Something went wrong. Please try emailing us directly at tristantrigg@beaconweb.co');
+      }
     });
-  });
-}
+  }
+
+});
