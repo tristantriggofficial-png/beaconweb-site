@@ -147,6 +147,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --- Revenue Calculator --- */
+  const calcSection = document.getElementById('revenueCalc');
+  if (calcSection) {
+    const inputLeads    = document.getElementById('calcLeads');
+    const inputPct      = document.getElementById('calcPct');
+    const inputValue    = document.getElementById('calcValue');
+    const sliderDisplay = document.getElementById('calcPctDisplay');
+    const amountEl      = document.getElementById('calcAmount');
+    const annualEl      = document.getElementById('calcAnnual');
+    const mathEl        = document.getElementById('calcMath');
+
+    let animObj = { val: 0 };
+    let animTween = null;
+
+    const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
+
+    const updateCalc = () => {
+      const leads   = Math.max(0, parseFloat(inputLeads.value)  || 0);
+      const pct     = Math.max(0, Math.min(100, parseFloat(inputPct.value) || 0));
+      const jobVal  = Math.max(0, parseFloat(inputValue.value)  || 0);
+
+      sliderDisplay.textContent = Math.round(pct) + '%';
+
+      const monthly = leads * 30 * (pct / 100) * jobVal * 0.20;
+      const annual  = monthly * 12;
+
+      if (mathEl) {
+        mathEl.textContent =
+          `${leads} leads/day × 30 days × ${Math.round(pct)}% unanswered × ${fmt(jobVal)} avg job × 20% close rate = ${fmt(monthly)}/mo`;
+      }
+
+      if (animTween) animTween.kill();
+      const prev = animObj.val;
+      animTween = gsap ? gsap.to(animObj, {
+        val: monthly,
+        duration: 0.6,
+        ease: 'power2.out',
+        onUpdate: () => {
+          amountEl.textContent = fmt(animObj.val);
+          annualEl.textContent = 'That\'s ' + fmt(animObj.val * 12) + ' per year walking out the door.';
+        }
+      }) : null;
+
+      if (!gsap) {
+        amountEl.textContent = fmt(monthly);
+        annualEl.textContent = 'That\'s ' + fmt(annual) + ' per year walking out the door.';
+      }
+    };
+
+    inputLeads.addEventListener('input', updateCalc);
+    inputValue.addEventListener('input', updateCalc);
+    inputPct.addEventListener('input', updateCalc);
+    updateCalc();
+
+    if (window.gsap && window.ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.set(calcSection, { opacity: 0 });
+      ScrollTrigger.create({
+        trigger: calcSection,
+        start: 'top 80%',
+        once: true,
+        onEnter: () => gsap.to(calcSection, { opacity: 1, duration: 0.8, ease: 'power2.out' })
+      });
+    }
+  }
+
   /* --- Contact form --- */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
