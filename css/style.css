@@ -327,3 +327,34 @@ input[type="range"]::-webkit-slider-thumb:hover{box-shadow:0 0 20px rgba(245,166
   .calc-inner{grid-template-columns:1fr;gap:40px}
   .calc-result{padding:32px 24px}
 }
+
+/* --- Nav: right cluster (call button + hamburger) --- */
+.nav-right{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.nav-call{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--white);white-space:nowrap;transition:color var(--tr)}
+.nav-call:hover{color:var(--amber)}
+.nav-call .icon{color:var(--amber);font-size:14px}
+@media(max-width:400px){
+  .nav-call{font-size:12px}
+}
+@media(max-width:360px){
+  .nav-call-text{display:none}
+}
+
+/* --- Testimonials --- */
+.testimonial-card{background:var(--surface-1);border:1px solid var(--border);border-radius:var(--radius-md);padding:32px;display:flex;flex-direction:column;gap:20px;height:100%}
+.testimonial-quote{color:var(--gray-1);font-size:16px;line-height:1.7}
+.testimonial-quote::before{content:'\201C';color:var(--amber);font-weight:700;margin-right:2px}
+.testimonial-quote::after{content:'\201D';color:var(--amber);font-weight:700;margin-left:2px}
+.testimonial-attribution{font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber)}
+
+/* --- Footer CTA strip --- */
+.footer-cta-strip{text-align:center;padding-bottom:40px;margin-bottom:40px;border-bottom:1px solid var(--border)}
+.footer-cta-strip .testimonial-quote{max-width:560px;margin:0 auto 12px}
+.footer-cta-strip .btn{margin-top:20px}
+
+/* --- Work: live-site logo badge --- */
+.work-logo-badge{display:inline-flex;align-items:center;justify-content:center;background:var(--white);border-radius:var(--radius-sm);padding:10px 16px;margin-bottom:16px}
+.work-logo-badge img{max-height:36px;width:auto;display:block}
+
+/* --- Work: live-site screenshot fills the photo box --- */
+.about-photo img{width:100%;height:100%;object-fit:cover}

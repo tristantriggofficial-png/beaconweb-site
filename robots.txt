@@ -4,6 +4,7 @@ Allow: /
 # Priority pages for crawlers
 Allow: /index.html
 Allow: /work.html
+Allow: /services.html
 Allow: /about.html
 Allow: /faq.html
 Allow: /contact.html
