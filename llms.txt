@@ -1,7 +1,7 @@
 # BeaconWeb
-> Business automation agency specializing in lead-to-appointment systems for service businesses.
+> Digital growth agency offering free audits and building/managing websites, SEO, social media, and paid ads for local service businesses in the Coachella Valley.
 
-BeaconWeb builds automated systems that turn leads into booked appointments — without the business owner lifting a finger. The flagship offering is the Lead-to-Appointment System, built in GoHighLevel.
+BeaconWeb starts every client relationship with a free audit — no charge, no pitch. The audit reviews a business's website, Google presence, social media, and paid ads, then delivers a plain-English breakdown of what's working and what isn't. If it makes sense, BeaconWeb goes on to build and manage the fix.
 
 ## Owner
 - Tristan Trigg
@@ -9,36 +9,46 @@ BeaconWeb builds automated systems that turn leads into booked appointments — 
 - Phone: (541) 291-7030
 - Location: La Quinta, CA — Coachella Valley
 
-## Core Offering: Lead-to-Appointment System
-A complete automation built in GoHighLevel with 8 components:
-1. Lead Capture — all channels, one inbox
-2. Instant SMS Response — under 60 seconds, every time
-3. AI Qualification — filters serious leads automatically
-4. Follow-Up Sequences — 7-day automated touches
-5. Missed Call Text-Back — every missed call gets an instant text
-6. Calendar Booking — leads book themselves
-7. Pipeline Tracking — real-time visibility on every lead
-8. Review Requests — automated after every completed job
+## The Free Audit
+The entry point for every client. Covers six areas:
+1. Website Speed + Mobile — load time and mobile experience
+2. Google Business Profile — completeness and local search readiness
+3. Local SEO + Rankings — where the business actually ranks locally
+4. Social Media Presence — activity and consistency across platforms
+5. Lead Follow-Up System — what happens after someone reaches out
+6. Paid Ads Performance — whether ad spend is converting
+
+## The Process
+1. Business fills out the free audit inquiry form
+2. BeaconWeb sends an onboarding form
+3. Strategy call gets scheduled automatically
+4. Client receives the audit findings + a proposal (pricing is discussed here, not on the website)
+5. BeaconWeb builds and manages what's needed — website, SEO, social, ads
+
+## Services (scoped per client after the audit — no fixed packages)
+- Website design and development (custom-coded, mobile-first)
+- Local SEO and content
+- Social media management
+- Google and Meta paid ads
+- Reporting
 
 ## Target Clients
-Service businesses where missed leads = missed revenue: HVAC, plumbing, roofing, landscaping, med spas, dental practices, real estate agents, auto detailers, home services, solar, law firms, insurance agents.
+Local service businesses in the Coachella Valley (Indio, La Quinta, Palm Desert, Palm Springs, Coachella, Indian Wells, Rancho Mirage, and surrounding areas) that depend on being found locally and following up with leads quickly.
 
-## Key Claim
-"Every lead gets a response in under a minute. Every missed call gets followed up. Every job gets a review request. Automatically."
-
-## Pricing
-Three tiers: Core System / Full System / Full System + Reviews. Setup fee + monthly management. No long-term contracts.
+## Real Work
+- Indio Car Wash — new custom-coded website, live in 6 days
+- K&R Car Wash — membership system, digital punch card, gift certificates
+- BrightPath — client dashboard, landing pages, QR code tracking
 
 ## Pages
 - Home: https://beaconweb.co/
-- The System: https://beaconweb.co/the-system.html
-- Pricing: https://beaconweb.co/pricing.html
+- Work: https://beaconweb.co/work.html
 - About: https://beaconweb.co/about.html
 - FAQ: https://beaconweb.co/faq.html
 - Contact: https://beaconweb.co/contact.html
 
 ## Technology
-- GoHighLevel (CRM, automation, SMS, calendar, pipeline)
-- HTML/CSS/JS (custom-coded website)
+- HTML/CSS/JS (custom-coded website, no framework)
+- GoHighLevel (CRM, onboarding, scheduling, automation)
 - Netlify (hosting)
 - GitHub (version control)

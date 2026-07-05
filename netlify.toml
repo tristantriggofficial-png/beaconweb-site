@@ -5,13 +5,8 @@
 
 # --- Clean URLs ---
 [[redirects]]
-  from = "/the-system"
-  to = "/the-system.html"
-  status = 200
-
-[[redirects]]
-  from = "/pricing"
-  to = "/pricing.html"
+  from = "/work"
+  to = "/work.html"
   status = 200
 
 [[redirects]]
@@ -41,13 +36,23 @@
   status = 301
 
 [[redirects]]
+  from = "/pricing.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/the-system.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
   from = "/marketing.html"
   to = "/"
   status = 301
 
 [[redirects]]
   from = "/portfolio.html"
-  to = "/"
+  to = "/work.html"
   status = 301
 
 [[redirects]]

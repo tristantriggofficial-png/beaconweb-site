@@ -3,11 +3,13 @@ Allow: /
 
 # Priority pages for crawlers
 Allow: /index.html
-Allow: /the-system.html
-Allow: /pricing.html
+Allow: /work.html
 Allow: /about.html
 Allow: /faq.html
 Allow: /contact.html
+
+# privacy.html is intentionally excluded via <meta name="robots" content="noindex">
+# rather than Disallow here, so crawlers can still read that tag.
 
 # AI crawlers — welcome
 User-agent: GPTBot
