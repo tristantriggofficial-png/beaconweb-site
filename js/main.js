@@ -207,27 +207,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const bookingForm = document.getElementById('bookingForm');
   if (bookingForm) {
-    bookingForm.addEventListener('submit', async (e) => {
+    bookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
+
+      // Basic client-side validation — all 3 fields required.
+      if (!bookingForm.checkValidity()) {
+        bookingForm.reportValidity();
+        return;
+      }
+
       const btn = document.getElementById('bookingSubmitBtn');
-      const errorEl = document.getElementById('bookingError');
-      if (errorEl) errorEl.style.display = 'none';
       if (btn) btn.disabled = true;
 
       const data = Object.fromEntries(new FormData(bookingForm));
 
-      try {
-        await fetch(BEACONWEB_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-          mode: 'no-cors'
-        });
-        window.location.href = BOOKING_CALENDAR_URL;
-      } catch (err) {
-        if (btn) btn.disabled = false;
-        if (errorEl) errorEl.style.display = 'block';
-      }
+      // Fire-and-forget: send lead data to GHL, but never let this call
+      // block or break the calendar redirect below. The redirect to the
+      // booking calendar is the actual conversion goal, so it must fire
+      // regardless of whether the webhook succeeds, fails, or is still
+      // pending (e.g. while BEACONWEB_WEBHOOK_URL is still a placeholder).
+      fetch(BEACONWEB_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        mode: 'no-cors'
+      }).catch(() => {});
+
+      window.location.href = BOOKING_CALENDAR_URL;
     });
   }
 

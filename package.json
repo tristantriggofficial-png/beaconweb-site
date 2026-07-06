@@ -1,0 +1,12 @@
+{
+  "name": "beaconweb-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "BeaconWeb marketing site — static HTML/CSS/JS, deployed via Netlify.",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1"
+  }
+}
