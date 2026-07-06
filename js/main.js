@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // block or break the calendar redirect below. The redirect to the
       // booking calendar is the actual conversion goal, so it must fire
       // regardless of whether the webhook succeeds, fails, or is still
-      // pending (e.g. while BEACONWEB_WEBHOOK_URL is still a placeholder).
+      // pending.
       fetch(BEACONWEB_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
