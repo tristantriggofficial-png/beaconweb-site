@@ -24,7 +24,7 @@ test('book-a-call button exists on the homepage and points at the booking calend
 
   const button = page.locator('#bookCallBtn');
   await expect(button).toBeVisible();
-  await expect(button).toHaveText('Find out why your business is losing money');
+  await expect(button).toHaveText('Book My Free Audit Call');
   await expect(button).toHaveAttribute('href', CALENDAR_URL);
 });
 
