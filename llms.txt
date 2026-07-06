@@ -19,10 +19,10 @@ The entry point for every client. Covers six areas:
 6. Paid Ads Performance — whether ad spend is converting
 
 ## The Process
-1. Business fills out the free audit inquiry form
-2. BeaconWeb sends an onboarding form
-3. Strategy call gets scheduled automatically
-4. Client receives the audit findings + a proposal (pricing is discussed here, not on the website)
+1. Business requests a free audit — either via the short inquiry form on the homepage, or by going straight to the booking calendar from the Contact page
+2. Free strategy call gets booked on the calendar
+3. BeaconWeb sends a short onboarding form after the call is booked, so the audit covers what actually matters to that business
+4. Client receives the audit findings on the call + a proposal if it's a fit (pricing is discussed here, not on the website)
 5. BeaconWeb builds and manages what's needed — website, SEO, social, ads
 
 ## Services (scoped per client after the audit — pricing is customized after your free audit, no fixed packages)
