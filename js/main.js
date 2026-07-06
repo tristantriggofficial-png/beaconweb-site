@@ -197,4 +197,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --- Book a Free Call form (contact.html) --- */
+  // Replace BEACONWEB_WEBHOOK_URL with your GHL webhook URL before launch
+  // GHL workflow should:
+  // 1. Create/update contact
+  // 2. Tag: strategy-call-requested
+  const BEACONWEB_WEBHOOK_URL = 'PLACEHOLDER_WEBHOOK';
+  const BOOKING_CALENDAR_URL = 'https://api.leadconnectorhq.com/widget/booking/6fJkJsGH5nA2RwmnnQAO';
+
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('bookingSubmitBtn');
+      const errorEl = document.getElementById('bookingError');
+      if (errorEl) errorEl.style.display = 'none';
+      if (btn) btn.disabled = true;
+
+      const data = Object.fromEntries(new FormData(bookingForm));
+
+      try {
+        await fetch(BEACONWEB_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          mode: 'no-cors'
+        });
+        window.location.href = BOOKING_CALENDAR_URL;
+      } catch (err) {
+        if (btn) btn.disabled = false;
+        if (errorEl) errorEl.style.display = 'block';
+      }
+    });
+  }
+
 });

@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Get Your Free Audit | BeaconWeb</title>
-  <meta name="description" content="Request your free website, Google, social media, and ads audit from BeaconWeb. No charge, no pitch — just a clear look at what's holding your Coachella Valley business back online.">
+  <title>Book Your Free Strategy Call | BeaconWeb</title>
+  <meta name="description" content="Tell us about your business and book your free strategy call with BeaconWeb. No charge, no pitch — just a clear look at what's holding your Coachella Valley business back online.">
   <link rel="canonical" href="https://beaconweb.co/contact.html">
-  <meta property="og:title" content="Get Your Free Audit | BeaconWeb">
-  <meta property="og:description" content="Free audit of your website, Google presence, social media, and ads. No charge, no pitch.">
+  <meta property="og:title" content="Book Your Free Strategy Call | BeaconWeb">
+  <meta property="og:description" content="Tell us about your business, then book your free strategy call. No charge, no pitch.">
   <meta property="og:url" content="https://beaconweb.co/contact.html">
   <meta property="og:type" content="website">
   <script type="application/ld+json">
@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -43,7 +43,7 @@
         <a href="about.html">About</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html" class="active">Contact</a>
-        <a href="#audit-form" class="nav-cta">Get My Free Audit</a>
+        <a href="#book-a-call" class="nav-cta">Get My Free Audit</a>
       </div>
       <div class="nav-right">
         <a href="tel:+15412917030" class="nav-call" aria-label="Call (541) 291-7030"><span class="icon">📞</span><span class="nav-call-text"> (541) 291-7030</span></a>
@@ -61,20 +61,20 @@
   <a href="about.html">About</a>
   <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
-  <a href="#audit-form" class="nav-cta">Get My Free Audit</a>
+  <a href="#book-a-call" class="nav-cta">Get My Free Audit</a>
 </div>
 
 <!-- ===== PAGE HERO ===== -->
 <section class="page-hero">
   <div class="container">
-    <div class="section-label">Free Audit</div>
-    <h1>Get Your <span class="amber">Free Audit.</span></h1>
-    <p class="sub">Takes 2 minutes. We'll handle the rest.</p>
+    <div class="section-label">Free Strategy Call</div>
+    <h1>Book Your <span class="amber">Free Strategy Call.</span></h1>
+    <p class="sub">Answer a few quick questions and we'll take you straight to the calendar to lock in your time.</p>
   </div>
 </section>
 
-<!-- ===== INQUIRY FORM ===== -->
-<section class="section">
+<!-- ===== BOOK A CALL ===== -->
+<section class="section" id="book-a-call">
   <div class="container" style="max-width:640px">
     <div class="scarcity-box">
       <span class="scarcity-badge">⚡ Limited Monthly Availability</span>
@@ -88,7 +88,7 @@
       </div>
       <p class="scarcity-note">Limited to 5 free audits per month — so we can actually give each one our full attention.</p>
     </div>
-    <form class="contact-form audit-form" id="audit-form" novalidate>
+    <form class="contact-form" id="bookingForm" novalidate>
       <div class="form-row">
         <div class="form-group">
           <label class="form-label" for="firstName">First Name *</label>
@@ -110,12 +110,8 @@
         </div>
       </div>
       <div class="form-group">
-        <label class="form-label" for="websiteUrl">Website URL</label>
-        <input class="form-control" type="url" id="websiteUrl" name="websiteUrl" placeholder="yourbusiness.com (if you have one)">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="challenge">What's your biggest challenge right now?</label>
-        <select class="form-control" id="challenge" name="challenge">
+        <label class="form-label" for="challenge">What do you need most? *</label>
+        <select class="form-control" id="challenge" name="challenge" required>
           <option value="">Select one</option>
           <option>Getting found on Google</option>
           <option>Website needs work</option>
@@ -123,19 +119,22 @@
           <option>Lead follow-up is broken</option>
           <option>Social media presence</option>
           <option>Running ads that convert</option>
-          <option>Not sure — just audit everything</option>
+          <option>Not sure — audit everything</option>
         </select>
       </div>
       <div class="notice-bar">
         <span class="icon">🤝</span>
         <p>You'll receive your audit whether you hire us or not.</p>
       </div>
-      <button type="submit" class="btn btn-primary btn-lg btn-full">Send My Free Audit Request</button>
+      <button type="submit" class="btn btn-primary btn-lg btn-full" id="bookingSubmitBtn">
+        <span class="btn-label">Book My Free Strategy Call</span>
+        <span class="spinner" aria-hidden="true"></span>
+      </button>
+      <div class="form-error" id="bookingError">
+        Something went wrong — call us directly at <a href="tel:+15412917030" style="color:inherit;text-decoration:underline">(541) 291-7030</a>
+      </div>
       <p style="font-size:13px;color:var(--gray-3);text-align:center;margin-top:8px">No spam. No pitch calls. Just a free, honest look at your business. Pricing is customized after your free audit.</p>
     </form>
-    <div class="form-success">
-      You're all set. Check your phone and email — we'll send your onboarding form within the hour and get your strategy call scheduled.
-    </div>
   </div>
 </section>
 
@@ -145,7 +144,7 @@
     <div class="footer-cta-strip">
       <p class="testimonial-quote">Tristan made me a website and it came really good. Only took him 2 weeks and instantly saw results. Highly recommend!</p>
       <div class="testimonial-attribution">— Verified Client</div>
-      <a href="#audit-form" class="btn btn-primary">Get My Free Audit</a>
+      <a href="#book-a-call" class="btn btn-primary">Get My Free Audit</a>
     </div>
     <div class="footer-grid">
       <div class="footer-brand">
@@ -171,7 +170,7 @@
       </div>
       <div class="footer-col">
         <h5>Get Started</h5>
-        <a href="#audit-form" class="footer-cta-link">Get My Free Audit</a>
+        <a href="#book-a-call" class="footer-cta-link">Get My Free Audit</a>
       </div>
     </div>
     <div class="footer-bottom">
