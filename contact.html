@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -76,13 +76,17 @@
 <!-- ===== INQUIRY FORM ===== -->
 <section class="section">
   <div class="container" style="max-width:640px">
-    <div class="notice-bar">
-      <span class="icon">⏳</span>
-      <p>Limited to 5 free audits per month — so we can actually give each one our full attention.</p>
-    </div>
-    <div class="notice-bar" style="margin-top:16px">
-      <span class="icon">🤝</span>
-      <p>You'll receive your audit whether you hire us or not.</p>
+    <div class="scarcity-box">
+      <span class="scarcity-badge">⚡ Limited Monthly Availability</span>
+      <div class="scarcity-headline"><span class="amber">5</span> Free Audits Per Month</div>
+      <div class="scarcity-slots" aria-hidden="true">
+        <div class="scarcity-slot"></div>
+        <div class="scarcity-slot"></div>
+        <div class="scarcity-slot"></div>
+        <div class="scarcity-slot"></div>
+        <div class="scarcity-slot"></div>
+      </div>
+      <p class="scarcity-note">Limited to 5 free audits per month — so we can actually give each one our full attention.</p>
     </div>
     <form class="contact-form audit-form" id="audit-form" novalidate>
       <div class="form-row">
@@ -121,6 +125,10 @@
           <option>Running ads that convert</option>
           <option>Not sure — just audit everything</option>
         </select>
+      </div>
+      <div class="notice-bar">
+        <span class="icon">🤝</span>
+        <p>You'll receive your audit whether you hire us or not.</p>
       </div>
       <button type="submit" class="btn btn-primary btn-lg btn-full">Send My Free Audit Request</button>
       <p style="font-size:13px;color:var(--gray-3);text-align:center;margin-top:8px">No spam. No pitch calls. Just a free, honest look at your business. Pricing is customized after your free audit.</p>

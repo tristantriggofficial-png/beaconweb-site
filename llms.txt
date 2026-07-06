@@ -45,7 +45,7 @@ Local service businesses in the Coachella Valley (Indio, La Quinta, Palm Desert,
 ## Real Work
 - Indio Car Wash — new custom-coded website, live in 6 days
 - K&R Car Wash — membership system, digital punch card, gift certificates
-- BrightPath — client dashboard, landing pages, QR code tracking
+- Overcast Industriez — client dashboard, landing pages, QR code tracking
 
 ## Pages
 - Home: https://beaconweb.co/
