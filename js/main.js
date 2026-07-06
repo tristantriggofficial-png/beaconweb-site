@@ -197,43 +197,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* --- Book a Free Call form (contact.html) --- */
-  // GHL workflow should:
-  // 1. Create/update contact
-  // 2. Tag: strategy-call-requested
-  const BEACONWEB_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/ICtWkaRkaZin73KCZGkC/webhook-trigger/9e8480e0-7780-4976-b4c2-d7da09a137d7';
-  const BOOKING_CALENDAR_URL = 'https://api.leadconnectorhq.com/widget/booking/6fJkJsGH5nA2RwmnnQAO';
-
-  const bookingForm = document.getElementById('bookingForm');
-  if (bookingForm) {
-    bookingForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Basic client-side validation — all 3 fields required.
-      if (!bookingForm.checkValidity()) {
-        bookingForm.reportValidity();
-        return;
-      }
-
-      const btn = document.getElementById('bookingSubmitBtn');
-      if (btn) btn.disabled = true;
-
-      const data = Object.fromEntries(new FormData(bookingForm));
-
-      // Fire-and-forget: send lead data to GHL, but never let this call
-      // block or break the calendar redirect below. The redirect to the
-      // booking calendar is the actual conversion goal, so it must fire
-      // regardless of whether the webhook succeeds, fails, or is still
-      // pending.
-      fetch(BEACONWEB_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-        mode: 'no-cors'
-      }).catch(() => {});
-
-      window.location.href = BOOKING_CALENDAR_URL;
-    });
-  }
-
 });
