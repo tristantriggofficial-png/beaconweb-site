@@ -198,11 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --- Book a Free Call form (contact.html) --- */
-  // Replace BEACONWEB_WEBHOOK_URL with your GHL webhook URL before launch
   // GHL workflow should:
   // 1. Create/update contact
   // 2. Tag: strategy-call-requested
-  const BEACONWEB_WEBHOOK_URL = 'PLACEHOLDER_WEBHOOK';
+  const BEACONWEB_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/ICtWkaRkaZin73KCZGkC/webhook-trigger/9e8480e0-7780-4976-b4c2-d7da09a137d7';
   const BOOKING_CALENDAR_URL = 'https://api.leadconnectorhq.com/widget/booking/6fJkJsGH5nA2RwmnnQAO';
 
   const bookingForm = document.getElementById('bookingForm');
