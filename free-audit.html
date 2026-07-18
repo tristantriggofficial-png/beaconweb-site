@@ -46,6 +46,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=8">
+  <style>
+    /* This page only: white background, dark text — rest of the site stays dark. */
+    :root {
+      --black:      #FFFFFF;
+      --white:      #14120D;
+      --surface-1:  #F7F6F2;
+      --surface-2:  #F0EEE8;
+      --surface-3:  #E8E5DD;
+      --gray-1:     #26241F;
+      --gray-2:     #57544B;
+      --gray-3:     #8B876F;
+      --border:     #E2DFD6;
+    }
+    #navbar.scrolled { background: rgba(255,255,255,0.96); }
+    .problem-col.bad { border-color: #E9CFCB; }
+    .calendar-embed { width: 100%; min-height: 720px; border: none; border-radius: var(--radius-md); overflow: hidden; }
+  </style>
 </head>
 <body>
 
@@ -176,7 +193,7 @@
   <div class="container" style="max-width:640px">
     <div class="section-label" style="text-align:center;display:block">Free Audit Call</div>
     <h2 class="section-title" style="text-align:center">Book Your <span class="amber">Free Audit Call.</span></h2>
-    <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto">One click takes you straight to the calendar to lock in your time.</p>
+    <p class="section-sub" style="text-align:center;margin-left:auto;margin-right:auto">Pick a time right here — no extra page, no extra click.</p>
     <div class="scarcity-box">
       <span class="scarcity-badge">⚡ Limited Monthly Availability</span>
       <div class="scarcity-headline"><span class="amber">5</span> Free Audits Per Month</div>
@@ -193,7 +210,7 @@
       <span class="icon">🤝</span>
       <p>You'll receive your audit whether you hire us or not.</p>
     </div>
-    <a href="https://api.leadconnectorhq.com/widget/booking/6fJkJsGH5nA2RwmnnQAO" class="btn btn-primary btn-lg btn-full" id="bookCallBtn">Book My Free Audit Call</a>
+    <iframe class="calendar-embed" src="https://api.leadconnectorhq.com/widget/booking/6fJkJsGH5nA2RwmnnQAO" scrolling="no" id="beaconweb-calendar" title="Book your free audit call"></iframe>
     <p style="font-size:13px;color:var(--gray-3);text-align:center;margin-top:8px">No spam. No pitch calls. Just a free, honest look at your business. Pricing is customized after your free audit.</p>
   </div>
 </section>
@@ -254,5 +271,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="js/main.js?v=6"></script>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
