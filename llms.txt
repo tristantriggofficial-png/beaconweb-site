@@ -1,7 +1,7 @@
 # BeaconWeb
-> Digital growth agency offering free audits and building/managing websites, SEO, social media, and paid ads for local service businesses in the Coachella Valley.
+> BeaconWeb builds and manages the complete online growth system for local businesses in the Coachella Valley — website, Google, social media, paid ads, CRM, lead capture, and follow-up automation. All of it. Done for you.
 
-BeaconWeb starts every client relationship with a free audit — no charge, no pitch. The audit reviews a business's website, Google presence, social media, and paid ads, then delivers a plain-English breakdown of what's working and what isn't. If it makes sense, BeaconWeb goes on to build and manage the fix.
+BeaconWeb starts every client relationship with a free audit — no charge, no pitch. The audit reviews a business's website, Google presence, local SEO, social media, lead capture, follow-up speed, paid ads, and competitors, then delivers a plain-English breakdown of what's working and what isn't. If it makes sense, BeaconWeb goes on to build and manage the full system.
 
 ## Owner
 - Tristan Trigg
@@ -10,30 +10,34 @@ BeaconWeb starts every client relationship with a free audit — no charge, no p
 - Location: La Quinta, CA — Coachella Valley
 
 ## The Free Audit
-The entry point for every client. Covers six areas:
+The entry point for every client. Covers eight areas:
 1. Website Speed + Mobile — load time and mobile experience
 2. Google Business Profile — completeness and local search readiness
 3. Local SEO + Rankings — where the business actually ranks locally
 4. Social Media Presence — activity and consistency across platforms
-5. Lead Follow-Up System — what happens after someone reaches out
-6. Paid Ads Performance — whether ad spend is converting
+5. Lead Capture Systems — whether inquiries are actually being captured
+6. Follow-Up Speed + Automation — what happens after someone reaches out
+7. Paid Ads Performance — whether ad spend is converting
+8. Competitor Comparison — how the business stacks up locally
 
 ## The Process
 1. Business requests a free audit — either via the short inquiry form on the homepage, or by going straight to the booking calendar from the Contact page
 2. Free strategy call gets booked on the calendar
 3. BeaconWeb sends a short onboarding form after the call is booked, so the audit covers what actually matters to that business
 4. Client receives the audit findings on the call + a proposal if it's a fit (pricing is discussed here, not on the website)
-5. BeaconWeb builds and manages what's needed — website, SEO, social, ads
+5. BeaconWeb builds and manages the full system — website, Google, SEO, social, ads, CRM, lead capture, follow-up automation
 
 ## Services (scoped per client after the audit — pricing is customized after your free audit, no fixed packages)
 - Website design and development (custom-coded, mobile-first)
 - SEO and content
 - Social media ads
 - Google and Meta paid ads
+- CRM setup and management
+- Lead capture systems
+- Follow-up automation
 - Video and photo creative
-- Lead follow-up automation
 
-Most engagements include ongoing monthly management, not just a one-time build.
+Most engagements include ongoing monthly management, not just a one-time build. Clients aren't buying a website — they're buying more customers.
 
 ## Target Clients
 Local service businesses in the Coachella Valley (Indio, La Quinta, Palm Desert, Palm Springs, Cathedral City, Rancho Mirage, Coachella, Indian Wells, and surrounding areas) that depend on being found locally and following up with leads quickly.
@@ -49,11 +53,14 @@ Local service businesses in the Coachella Valley (Indio, La Quinta, Palm Desert,
 
 ## Pages
 - Home: https://beaconweb.co/
-- Work: https://beaconweb.co/work.html
 - Services: https://beaconweb.co/services.html
+- Free Audit: https://beaconweb.co/free-audit
+- Get Audit: https://beaconweb.co/get-audit
+- Work: https://beaconweb.co/work.html
 - About: https://beaconweb.co/about.html
 - FAQ: https://beaconweb.co/faq.html
 - Contact: https://beaconweb.co/contact.html
+- Privacy: https://beaconweb.co/privacy.html
 
 ## Technology
 - HTML/CSS/JS (custom-coded website, no framework)
