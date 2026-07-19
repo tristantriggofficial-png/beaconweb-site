@@ -63,7 +63,25 @@
     .problem-col.bad { border-color: #E9CFCB; }
     .calendar-embed { width: 100%; min-height: 720px; border: none; border-radius: var(--radius-md); overflow: hidden; }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '2255764238517678');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2255764238517678&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
+
 <body>
 
 <!-- ===== NAV (stripped — no exits off this page) ===== -->
@@ -261,7 +279,24 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="js/main.js?v=6"></script>
+<script src="js/main.js?v=7"></script>
 <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+  // Meta Pixel: Lead event when someone interacts with the embedded booking
+  // calendar. It's a cross-origin iframe, so a real click handler can't
+  // reach inside it — this fires the first time keyboard/mouse focus moves
+  // into the iframe, which happens the moment the user starts using it.
+  (function () {
+    var calendar = document.getElementById('beaconweb-calendar');
+    if (!calendar || typeof fbq !== 'function') return;
+    var fired = false;
+    window.addEventListener('blur', function () {
+      if (!fired && document.activeElement === calendar) {
+        fired = true;
+        fbq('track', 'Lead');
+      }
+    });
+  })();
+</script>
 </body>
 </html>

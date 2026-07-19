@@ -150,4 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --- Meta Pixel: Lead event on the GHL calendar booking button --- */
+  const bookCallBtn = document.getElementById('bookCallBtn');
+  if (bookCallBtn && typeof fbq === 'function') {
+    bookCallBtn.addEventListener('click', () => fbq('track', 'Lead'));
+  }
+
 });
