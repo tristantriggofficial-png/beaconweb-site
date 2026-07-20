@@ -61,7 +61,6 @@
     }
     #navbar.scrolled { background: rgba(255,255,255,0.96); }
     .problem-col.bad { border-color: #E9CFCB; }
-    .calendar-embed { width: 100%; min-height: 720px; border: none; border-radius: var(--radius-md); overflow: hidden; }
   </style>
   <!-- Meta Pixel Code -->
   <script>
@@ -96,7 +95,7 @@
   </div>
 </nav>
 
-<!-- ===== HERO + BOOK A CALL (merged — the calendar is the very next thing you see, no scrolling, no extra click) ===== -->
+<!-- ===== HERO + BOOK A CALL (merged — booking is the very next thing you see, no scrolling, no extra click) ===== -->
 <section class="hero" id="book-a-call" style="padding-bottom:60px">
   <div class="container">
     <div class="hero-eyebrow">100% Free — No Obligation</div>
@@ -127,13 +126,13 @@
           <div class="scarcity-slot"></div>
           <div class="scarcity-slot"></div>
         </div>
-        <p class="scarcity-note">Limited to 5 free audits per month — so we can actually give each one our full attention. Pick a time below and it's locked in.</p>
+        <p class="scarcity-note">Limited to 5 free audits per month — so we can actually give each one our full attention. Click below and it's locked in.</p>
       </div>
       <div class="notice-bar">
         <span class="icon">🤝</span>
         <p>You'll receive your audit whether you hire us or not.</p>
       </div>
-      <iframe class="calendar-embed" src="https://api.leadconnectorhq.com/widget/booking/6fJkJsGH5nA2RwmnnQAO" scrolling="no" id="beaconweb-calendar" title="Book your free audit call"></iframe>
+      <a href="https://beaconwebhq.com/onboard" class="btn btn-primary btn-lg btn-full" id="bookCallBtn">Book My Free Audit Call →</a>
       <p style="font-size:13px;color:var(--gray-3);text-align:center;margin-top:8px">No spam. No pitch calls. Just a free, honest look at your business. Pricing is customized after your free audit.</p>
 
       <div style="display:flex;flex-direction:column;gap:12px;margin-top:32px;padding-top:28px;border-top:1px solid var(--border)">
@@ -297,24 +296,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="js/main.js?v=7"></script>
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
-<script>
-  // Meta Pixel: Lead event when someone interacts with the embedded booking
-  // calendar. It's a cross-origin iframe, so a real click handler can't
-  // reach inside it — this fires the first time keyboard/mouse focus moves
-  // into the iframe, which happens the moment the user starts using it.
-  (function () {
-    var calendar = document.getElementById('beaconweb-calendar');
-    if (!calendar || typeof fbq !== 'function') return;
-    var fired = false;
-    window.addEventListener('blur', function () {
-      if (!fired && document.activeElement === calendar) {
-        fired = true;
-        fbq('track', 'Lead');
-      }
-    });
-  })();
-</script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6a5c1dcbc9f31412b2e552a1" data-source="WEB_USER"></script>
 </body>
 </html>
