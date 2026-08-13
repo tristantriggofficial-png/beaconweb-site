@@ -40,19 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* --- GSAP: hero headline word split --- */
+  /* --- GSAP: hero headline word split ---
+     No opacity animation here on purpose: this is the most important
+     above-the-fold text on the page, and hiding it behind a fade-in
+     (even briefly) reads as broken on slower connections/devices. Words
+     stay visible immediately; only a subtle rise-in plays. */
   const heroHeadline = document.querySelector('.hero-headline');
-  if (heroHeadline && window.gsap && window.ScrollTrigger) {
-    gsap.registerPlugin(ScrollTrigger);
+  if (heroHeadline && window.gsap) {
     const words = heroHeadline.querySelectorAll('.word');
-    gsap.set(words, { opacity: 0, y: 40 });
+    gsap.set(words, { y: 16 });
     gsap.to(words, {
-      opacity: 1,
       y: 0,
-      stagger: 0.07,
-      duration: 0.7,
-      ease: 'power3.out',
-      delay: 0.2
+      stagger: 0.05,
+      duration: 0.5,
+      ease: 'power3.out'
     });
   }
 
