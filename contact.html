@@ -32,6 +32,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=8">
+  <!-- ===== Page-scoped light theme override (contact.html only) =====
+       Matches the light palette used on the redesigned homepage:
+       white/near-white background, dark charcoal text, amber accent,
+       light-gray card surfaces. Scoped to this document via CSS custom
+       property overrides + a handful of hard-coded selectors that used
+       fixed dark colors in the shared stylesheet. Nothing here touches
+       css/style.css, so every other page is unaffected. -->
+  <style>
+    :root{
+      --black:      #1A1A1A;   /* dark charcoal text-on-amber (buttons/badges) */
+      --white:      #1A1A1A;   /* primary text color (was pure white on dark) */
+      --gray-1:     #333333;   /* primary body copy */
+      --gray-2:     #666666;   /* secondary/muted copy */
+      --gray-3:     #8A8A8A;   /* faintest copy (legal/footnotes) */
+      --surface-1:  #F5F5F5;   /* card / panel surfaces */
+      --surface-2:  #EFEFEF;
+      --surface-3:  #E9E9E9;
+      --border:     #E5E5E5;   /* hairline borders on light surfaces */
+      --amber-glow: rgba(245,166,35,0.28);
+      --amber-text: #A3690D;   /* amber tuned dark enough to stay readable as text on white */
+    }
+    body{background:#FFFFFF}
+
+    /* Nav: fix hard-coded dark backgrounds from the dark-theme stylesheet */
+    #navbar.scrolled{background:rgba(255,255,255,0.9);box-shadow:0 1px 0 var(--border),0 8px 24px rgba(0,0,0,0.05)}
+    .nav-mobile{background:#FFFFFF}
+
+    /* Amber used as TEXT color needs a darker tone to stay legible on white;
+       amber used as a FILL (buttons, badges, medallion, glows) stays vivid. */
+    .amber,.section-label,.page-eyebrow,.scarcity-badge,.testimonial-attribution{color:var(--amber-text)}
+    .testimonial-quote::before,.testimonial-quote::after{color:var(--amber-text)}
+    .page-eyebrow::before{background:var(--amber)}
+
+    /* Eyebrow pill (reuses the homepage's pulsing-dot pattern) */
+    .page-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(245,166,35,0.1);border:1px solid rgba(245,166,35,0.3);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:22px}
+    .page-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;animation:pulse 2s ease infinite;flex-shrink:0}
+
+    /* --- Scarcity focal block: the "5" is the star of the section --- */
+    .scarcity-focal{background:linear-gradient(160deg,rgba(245,166,35,0.09) 0%,#FFFFFF 60%);border:1px solid rgba(245,166,35,0.35);border-radius:20px;padding:36px 30px;text-align:center;margin-bottom:20px;box-shadow:0 10px 34px rgba(245,166,35,0.12)}
+    .scarcity-badge{background:rgba(245,166,35,0.12);border-color:rgba(245,166,35,0.4)}
+    .scarcity-medallion{display:flex;align-items:center;justify-content:center;gap:22px;margin:22px 0 22px}
+    .scarcity-medallion-ring{width:104px;height:104px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 32% 28%,#FFD98A 0%,var(--amber) 55%,var(--amber-dark) 100%);box-shadow:0 0 0 6px rgba(245,166,35,0.14),0 14px 32px rgba(245,166,35,0.4)}
+    .scarcity-medallion-num{font-family:'Bebas Neue',sans-serif;font-size:56px;color:#1A1A1A;line-height:1;letter-spacing:0.02em}
+    .scarcity-medallion-label{font-family:'Bebas Neue',sans-serif;font-size:23px;letter-spacing:0.03em;line-height:1.15;color:#1A1A1A;text-align:left}
+    .scarcity-note{font-size:15px;max-width:400px;margin:0 auto}
+    @media(max-width:480px){
+      .scarcity-medallion{flex-direction:column;gap:12px}
+      .scarcity-medallion-label{text-align:center}
+    }
+
+    /* --- Proof card: testimonial repositioned right before the CTA --- */
+    .proof-card{background:var(--surface-1);border:1px solid var(--border);border-radius:16px;padding:26px 28px;margin:24px 0;text-align:center}
+    .proof-card .testimonial-quote{font-size:16px;margin:0}
+    .proof-card .testimonial-attribution{display:block;margin-top:10px}
+
+    /* --- Mega CTA: impossible to miss --- */
+    .mega-cta{font-size:20px;padding:26px 36px;border-radius:100px;letter-spacing:0.01em;margin-top:8px;position:relative;animation:cta-breathe 2.6s ease-in-out infinite;transition:transform .25s ease,box-shadow .25s ease}
+    .mega-cta:hover{transform:translateY(-2px) scale(1.015);box-shadow:0 0 0 10px rgba(245,166,35,0.14),0 24px 54px rgba(245,166,35,0.48);animation-play-state:paused}
+    .mega-cta-arrow{display:inline-block;margin-left:6px;transition:transform .25s ease}
+    .mega-cta:hover .mega-cta-arrow{transform:translateX(4px)}
+    @keyframes cta-breathe{
+      0%,100%{box-shadow:0 0 0 0 rgba(245,166,35,0.45),0 16px 36px rgba(245,166,35,0.3),0 4px 14px rgba(0,0,0,0.06)}
+      50%{box-shadow:0 0 0 14px rgba(245,166,35,0.12),0 22px 46px rgba(245,166,35,0.4),0 4px 14px rgba(0,0,0,0.08)}
+    }
+    @media(max-width:480px){
+      .mega-cta{font-size:17px;padding:22px 28px}
+    }
+  </style>
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -89,33 +157,40 @@
 <!-- ===== PAGE HERO ===== -->
 <section class="page-hero">
   <div class="container">
-    <div class="section-label">Free Strategy Call</div>
-    <h1>Book Your <span class="amber">Free Strategy Call.</span></h1>
-    <p class="sub">One click takes you straight to the calendar to lock in your time.</p>
+    <div class="page-eyebrow">Free Strategy Call — No Pitch, No Spam</div>
+    <h1>Claim Your <span class="amber">Free Strategy Call.</span></h1>
+    <p class="sub">One click takes you straight to my calendar. No forms, no funnel — just pick a time.</p>
   </div>
 </section>
 
 <!-- ===== BOOK A CALL ===== -->
 <section class="section" id="book-a-call">
   <div class="container" style="max-width:640px">
-    <div class="scarcity-box">
+
+    <!-- Scarcity focal point -->
+    <div class="scarcity-focal">
       <span class="scarcity-badge">⚡ Limited Monthly Availability</span>
-      <div class="scarcity-headline"><span class="amber">5</span> Free Audits Per Month</div>
-      <div class="scarcity-slots" aria-hidden="true">
-        <div class="scarcity-slot"></div>
-        <div class="scarcity-slot"></div>
-        <div class="scarcity-slot"></div>
-        <div class="scarcity-slot"></div>
-        <div class="scarcity-slot"></div>
+      <div class="scarcity-medallion">
+        <div class="scarcity-medallion-ring"><span class="scarcity-medallion-num">5</span></div>
+        <div class="scarcity-medallion-label">Free Audits<br>Per Month</div>
       </div>
       <p class="scarcity-note">Limited to 5 free audits per month — so we can actually give each one our full attention.</p>
     </div>
+
+    <!-- Trust line -->
     <div class="notice-bar">
       <span class="icon">🤝</span>
       <p>You'll receive your audit whether you hire us or not.</p>
     </div>
-    <a href="https://beaconwebhq.com/onboard" class="btn btn-primary btn-lg btn-full" id="bookCallBtn">Book My Free Audit Call</a>
-    <p style="font-size:13px;color:var(--gray-3);text-align:center;margin-top:8px">No spam. No pitch calls. Just a free, honest look at your business. Pricing is customized after your free audit.</p>
+
+    <!-- Real social proof, positioned right before the ask -->
+    <div class="proof-card">
+      <p class="testimonial-quote">Tristan made me a website and it came really good. Only took him 2 weeks and instantly saw results. Highly recommend!</p>
+      <div class="testimonial-attribution">— Verified Client</div>
+    </div>
+
+    <a href="https://beaconwebhq.com/onboard" class="btn btn-primary btn-lg btn-full mega-cta" id="bookCallBtn">Book My Free Audit Call<span class="mega-cta-arrow" aria-hidden="true">→</span></a>
+    <p style="font-size:14px;color:var(--gray-3);text-align:center;margin-top:12px">No spam. No pitch calls. Just a free, honest look at your business. Pricing is customized after your free audit.</p>
   </div>
 </section>
 
@@ -123,8 +198,6 @@
 <footer>
   <div class="container">
     <div class="footer-cta-strip">
-      <p class="testimonial-quote">Tristan made me a website and it came really good. Only took him 2 weeks and instantly saw results. Highly recommend!</p>
-      <div class="testimonial-attribution">— Verified Client</div>
       <a href="#book-a-call" class="btn btn-primary">Get My Free Audit</a>
     </div>
     <div class="footer-grid">

@@ -25,7 +25,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "BeaconWeb",
-    "description": "BeaconWeb builds and manages the AI Growth System for local businesses in the Coachella Valley — a website built for Google and AI search, missed-call text-back, automatic lead follow-up, lead capture, reputation management, and paid ads, all built and managed for you. It starts with a free audit.",
+    "description": "BeaconWeb builds and manages one connected AI Growth System for local businesses in the Coachella Valley — website, lead capture, automated follow-up, AI chat, and reputation management, all working together and managed for you. It starts with a free audit.",
     "url": "https://beaconweb.co",
     "telephone": "+15412917030",
     "email": "tristantrigg@beaconweb.co",
@@ -60,6 +60,59 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css?v=8">
+
+  <!-- ============================================
+       HOMEPAGE-ONLY LIGHT THEME (index.html only —
+       every other page keeps the dark theme via the
+       untouched shared stylesheet)
+       ============================================ -->
+  <style>
+    :root{
+      --white:      #111111;  /* headings / strong text — dark on light bg */
+      --gray-1:     #333333;  /* body copy */
+      --gray-2:     #6B6B6B;  /* secondary / labels / sub copy */
+      --gray-3:     #8C8C8C;  /* fine print */
+      --surface-1:  #F5F5F5;  /* card / banded-section surface */
+      --surface-2:  #F0F0F0;
+      --surface-3:  #E7E7E7;
+      --border:     #E4E4E4;  /* subtle light border */
+    }
+    body{background:#FFFFFF}
+    .nav-mobile{background:#FFFFFF}
+    #navbar.scrolled{background:rgba(255,255,255,0.94);box-shadow:0 1px 0 var(--border)}
+    .problem-col.bad{border-color:rgba(239,68,68,0.35)}
+
+    /* Amber used as TEXT needs a deeper shade to stay readable on white —
+       amber stays full-brightness everywhere it's a background/badge/border. */
+    .amber,.section-label,.hero-eyebrow,.nav-logo span,.good .col-label,
+    .system-card-outcome,.testimonial-attribution{color:var(--amber-dark)}
+    .btn-secondary{border-color:#D6D6D6}
+    .btn-secondary:hover{border-color:var(--amber-dark);color:var(--amber-dark)}
+
+    /* Hero: two-column layout, big wordmark on the side */
+    .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+    .hero-logo-wrap{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+    .hero-logo-wrap::before{content:'';position:absolute;inset:-60px;background:radial-gradient(circle,rgba(245,166,35,0.22) 0%,transparent 65%);pointer-events:none;z-index:0}
+    .hero-logo{position:relative;z-index:1;font-family:'Bebas Neue',sans-serif;font-size:clamp(56px,10vw,132px);line-height:0.92;letter-spacing:0.02em;color:var(--white);text-shadow:0 2px 10px rgba(0,0,0,0.05)}
+    .hero-logo span{color:var(--amber);text-shadow:0 0 60px rgba(245,166,35,0.55)}
+    .hero-logo-tag{position:relative;z-index:1;margin-top:16px;font-size:13px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--amber-dark)}
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:0}
+      .hero-copy{order:1}
+      .hero-logo-wrap{order:2;padding:28px 0 4px}
+      .hero-logo{font-size:clamp(46px,18vw,80px)}
+    }
+
+    /* Compact 10-item AI Growth System grid */
+    .automations-grid.grid-10{grid-template-columns:repeat(5,1fr);gap:16px}
+    .automations-grid.grid-10 .auto-card{padding:22px 18px}
+    .automations-grid.grid-10 .auto-card .icon{font-size:22px;margin-bottom:8px}
+    .automations-grid.grid-10 .auto-card .name{font-size:16px;margin-bottom:6px}
+    .automations-grid.grid-10 .auto-card .desc{font-size:12.5px;line-height:1.45}
+    @media(max-width:1024px){.automations-grid.grid-10{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:600px){.automations-grid.grid-10{grid-template-columns:repeat(2,1fr)}}
+  </style>
+
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -116,25 +169,30 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-eyebrow">100% Free — No Obligation</div>
-    <p style="font-size:15px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-2);margin-bottom:14px;max-width:600px">Your AI Growth System — Built, Automated, Managed.</p>
-    <h1 class="hero-headline font-display">
-      <span class="word">The</span>
-      <span class="word amber">AI</span>
-      <span class="word amber">Growth</span>
-      <span class="word amber">System</span>
-      <span class="word">for</span>
-      <span class="word">Coachella</span>
-      <span class="word">Valley</span>
-      <span class="word">Businesses.</span>
-    </h1>
-    <p class="hero-sub">A website built to get found by Google and AI search tools. Missed-call text-back, automatic lead follow-up, lead capture, and reputation management built in. One system, fully set up and managed for you — your free audit is how it starts.</p>
-    <div class="hero-actions">
-      <a href="#book-a-call" class="btn btn-primary btn-lg">Get My Free Audit</a>
-      <a href="tel:+15412917030" class="btn btn-secondary btn-lg">📞 Call Now</a>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">100% Free — No Obligation</div>
+      <h1 class="hero-headline font-display">
+        <span class="word">The</span>
+        <span class="word amber">AI</span>
+        <span class="word amber">Growth</span>
+        <span class="word amber">System</span>
+        <span class="word">for</span>
+        <span class="word">Coachella</span>
+        <span class="word">Valley</span>
+        <span class="word">Businesses.</span>
+      </h1>
+      <p class="hero-sub">One system that gets you found, captures every lead, and follows up automatically — built and managed for you. It starts with a free audit.</p>
+      <div class="hero-actions">
+        <a href="#book-a-call" class="btn btn-primary btn-lg">Get My Free Audit</a>
+        <a href="tel:+15412917030" class="btn btn-secondary btn-lg">📞 Call Now</a>
+      </div>
+      <p style="font-size:13px;color:var(--gray-3);max-width:460px">No obligation. Results in 48 hours. Serving Indio, La Quinta, Palm Desert, Palm Springs, Cathedral City, Rancho Mirage &amp; Coachella.</p>
     </div>
-    <p style="font-size:13px;color:var(--gray-3);max-width:460px">No obligation. Results in 48 hours. Serving Indio, La Quinta, Palm Desert, Palm Springs, Cathedral City, Rancho Mirage &amp; Coachella.</p>
+    <div class="hero-logo-wrap" aria-hidden="true">
+      <div class="hero-logo">BEACON<span>WEB</span></div>
+      <div class="hero-logo-tag">AI Growth System</div>
+    </div>
   </div>
 </section>
 
@@ -142,38 +200,58 @@
 <section class="section" id="ai-growth-system">
   <div class="container">
     <div class="section-label">What You Get</div>
-    <h2 class="section-title">Your AI Growth System — Built, Automated, and Managed.</h2>
-    <p class="section-sub">Not just a website. A system that answers, follows up, and protects your reputation — automatically.</p>
-    <div class="automations-grid">
+    <h2 class="section-title">One System. Everything Automated.</h2>
+    <p class="section-sub">One connected system that answers, follows up, and protects your reputation — automatically. Not a stack of separate services.</p>
+    <div class="automations-grid grid-10">
       <div class="auto-card">
         <span class="icon">📞</span>
         <div class="name">Missed-Call Text-Back</div>
-        <div class="desc">Can't pick up? Whoever called gets an instant text back automatically — so a missed call never quietly turns into a lost customer.</div>
+        <div class="desc">Missed calls get an instant text back — automatically.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🔁</span>
         <div class="name">Automatic Follow-Up</div>
-        <div class="desc">Every lead gets followed up with, every time — automatically. No one falls through the cracks because someone got busy.</div>
+        <div class="desc">Every lead gets followed up with, every time.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🧲</span>
         <div class="name">Lead Capture</div>
-        <div class="desc">Calls, forms, and texts all funnel into one system, so every lead is captured and tracked — nothing lost, nothing scattered across sticky notes.</div>
+        <div class="desc">Calls, forms, and texts — all captured in one place.</div>
       </div>
       <div class="auto-card">
         <span class="icon">⭐</span>
         <div class="name">Reputation Management</div>
-        <div class="desc">We help you get more reviews and keep an eye on what shows up when people search your business name.</div>
+        <div class="desc">More reviews, and an eye on what shows up when people search you.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🌐</span>
-        <div class="name">A Website Built for AI Search</div>
-        <div class="desc">Hand-coded, no templates — clean, structured code that's easier for Google, and the AI search tools people are starting to use instead, to read and rank.</div>
+        <div class="name">Website Built for AI Search</div>
+        <div class="desc">Hand-coded to rank with Google and AI search tools.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🗂️</span>
         <div class="name">One CRM, Not Ten Tools</div>
-        <div class="desc">Every lead, message, and job tracked in one place — not scattered across texts, spreadsheets, and sticky notes.</div>
+        <div class="desc">Every lead and job tracked in one place.</div>
+      </div>
+      <div class="auto-card">
+        <span class="icon">💬</span>
+        <div class="name">AI Website Chat Agent</div>
+        <div class="desc">Answers questions and captures leads 24/7, even after hours.</div>
+      </div>
+      <div class="auto-card">
+        <span class="icon">🚀</span>
+        <div class="name">Speed-to-Lead Auto-Response</div>
+        <div class="desc">New leads get a text or call within seconds — no one beats you to them.</div>
+      </div>
+      <div class="auto-card">
+        <span class="icon">✍️</span>
+        <div class="name">AI-Drafted Review Responses</div>
+        <div class="desc">Every review gets a thoughtful reply — automatically.</div>
+      </div>
+      <div class="auto-card">
+        <span class="icon">⏰</span>
+        <div class="name">Smart Appointment Reminders</div>
+        <div class="desc">Automatic reminders that cut down no-shows.</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px">
@@ -187,19 +265,19 @@
   <div class="container">
     <div class="section-label">The Problem</div>
     <h2 class="section-title">Most Local Businesses Are Invisible Online.</h2>
-    <p class="section-sub">You're doing the work. You're good at what you do. But if people can't find you, can't reach you fast enough, or can't tell if your ads are working — none of that matters.</p>
+    <p class="section-sub">You're good at what you do. If people can't find you or reach you fast enough, none of that matters.</p>
     <div data-fade>
       <div style="padding:24px 0;border-bottom:1px solid var(--border)">
         <p style="font-size:19px;color:var(--white);display:flex;gap:12px;align-items:flex-start"><span>❌</span>Your website isn't showing up on Google</p>
-        <p class="amber" style="margin-top:8px;padding-left:28px;font-weight:600;font-size:15px">→ We check your rankings, technical SEO, and Google Business Profile — and tell you exactly why.</p>
+        <p class="amber" style="margin-top:8px;padding-left:28px;font-weight:600;font-size:15px">→ We check your rankings and Google Business Profile — and tell you why.</p>
       </div>
       <div style="padding:24px 0;border-bottom:1px solid var(--border)">
         <p style="font-size:19px;color:var(--white);display:flex;gap:12px;align-items:flex-start"><span>❌</span>Leads come in and never get followed up with</p>
-        <p class="amber" style="margin-top:8px;padding-left:28px;font-weight:600;font-size:15px">→ We look at your lead follow-up process and show you where leads are falling through the cracks.</p>
+        <p class="amber" style="margin-top:8px;padding-left:28px;font-weight:600;font-size:15px">→ We find exactly where leads are falling through the cracks.</p>
       </div>
       <div style="padding:24px 0">
         <p style="font-size:19px;color:var(--white);display:flex;gap:12px;align-items:flex-start"><span>❌</span>You have no idea what's working and what isn't</p>
-        <p class="amber" style="margin-top:8px;padding-left:28px;font-weight:600;font-size:15px">→ We review your ads, socials, and site traffic and give you a plain-English breakdown of what's earning its keep.</p>
+        <p class="amber" style="margin-top:8px;padding-left:28px;font-weight:600;font-size:15px">→ We give you a plain-English breakdown of what's earning its keep.</p>
       </div>
     </div>
   </div>
@@ -210,17 +288,17 @@
   <div class="container">
     <div class="section-label">Why We Audit First</div>
     <h2 class="section-title">Most Agencies Pitch. We Diagnose.</h2>
-    <p class="section-sub">Most agencies open with a sales call and a package. We open with a free audit, because guessing what your business needs before we've actually looked isn't a strategy — it's a sales tactic.</p>
+    <p class="section-sub">Most agencies pitch a package first. We look first — for free.</p>
     <div class="problem-grid" data-fade>
       <div class="problem-col bad">
         <div class="col-label">Most Agencies</div>
-        <div class="problem-item"><span class="icon">❌</span>Pitch a package before they've seen your website or your numbers.</div>
+        <div class="problem-item"><span class="icon">❌</span>Pitch a package before they've seen your numbers.</div>
         <div class="problem-item"><span class="icon">❌</span>Sell you what they offer, not what you actually need.</div>
         <div class="problem-item"><span class="icon">❌</span>Lock you into a contract before you know if it'll help.</div>
       </div>
       <div class="problem-col good">
         <div class="col-label">BeaconWeb</div>
-        <div class="problem-item"><span class="icon">✅</span>Audits your website, Google presence, social, and ads first — for free.</div>
+        <div class="problem-item"><span class="icon">✅</span>Audits everything first — for free.</div>
         <div class="problem-item"><span class="icon">✅</span>Recommends only what the audit actually shows you need.</div>
         <div class="problem-item"><span class="icon">✅</span>You'll receive your audit whether you hire us or not.</div>
       </div>
@@ -233,47 +311,47 @@
   <div class="container">
     <div class="section-label">The Free Audit</div>
     <h2 class="section-title">Here's What We Look At.</h2>
-    <p class="section-sub">One audit. Six areas. A clear picture of what's helping your business and what's holding it back — the first step into your AI Growth System.</p>
+    <p class="section-sub">One audit covers all of it — the first step into your AI Growth System.</p>
     <div class="automations-grid">
       <div class="auto-card">
         <span class="icon">⚡</span>
         <div class="name">Website Speed + Mobile</div>
-        <div class="desc">How fast your site loads and how it performs on a phone — where most of your customers actually look.</div>
+        <div class="desc">How fast your site loads — and how it performs on a phone.</div>
       </div>
       <div class="auto-card">
         <span class="icon">📍</span>
         <div class="name">Google Business Profile</div>
-        <div class="desc">Whether your listing is complete, accurate, and set up to win the map pack for local searches.</div>
+        <div class="desc">Whether your listing is complete and set up to win the map pack.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🔎</span>
         <div class="name">Local SEO + Rankings</div>
-        <div class="desc">Where you actually rank for the searches that matter across Indio, La Quinta, Palm Desert and the rest of the Valley — not just your business name.</div>
+        <div class="desc">Where you actually rank for the searches that matter across the Valley.</div>
       </div>
       <div class="auto-card">
         <span class="icon">📱</span>
         <div class="name">Social Media Presence</div>
-        <div class="desc">Whether your profiles are active, consistent, and actually representing the business well.</div>
+        <div class="desc">Whether your profiles are active and represent you well.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🧲</span>
         <div class="name">Lead Capture Systems</div>
-        <div class="desc">Whether your site and profiles actually capture a lead's info — or just let them leave without a trace.</div>
+        <div class="desc">Whether your site actually captures a lead — or lets them leave.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🔁</span>
         <div class="name">Follow-Up Speed + Automation</div>
-        <div class="desc">What happens after someone reaches out — how fast, and how many are falling through the cracks.</div>
+        <div class="desc">How fast you follow up, and what's falling through the cracks.</div>
       </div>
       <div class="auto-card">
         <span class="icon">📊</span>
         <div class="name">Paid Ads Performance</div>
-        <div class="desc">If you're running ads, whether they're actually converting or just burning through budget.</div>
+        <div class="desc">Whether your ads are converting — or just burning budget.</div>
       </div>
       <div class="auto-card">
         <span class="icon">🥊</span>
         <div class="name">Competitor Comparison</div>
-        <div class="desc">How you actually stack up online against the businesses you're competing with for the same customers.</div>
+        <div class="desc">How you stack up against who you're competing with.</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:40px">
@@ -286,7 +364,7 @@
 <section class="cta-section">
   <div class="container">
     <h2>Still reading? Let's show you your AI Growth System.</h2>
-    <p>One click now saves you the guesswork later — and the audit's free either way.</p>
+    <p>One click. The audit's free either way.</p>
     <div class="actions">
       <a href="#book-a-call" class="btn btn-primary btn-lg">Get My Free Audit</a>
     </div>
@@ -298,13 +376,13 @@
   <div class="container">
     <div class="section-label">The Process</div>
     <h2 class="section-title">Simple Process. Real Results.</h2>
-    <p class="section-sub">No sales calls up front. No obligation. Here's exactly what happens after you reach out.</p>
+    <p class="section-sub">No sales calls up front. Here's what happens next.</p>
     <div class="process-steps">
       <div class="step">
         <div class="step-num">01</div>
         <div>
           <div class="step-title">Click the button</div>
-          <div class="step-body">No form to fill out — one click takes you straight to our booking calendar.</div>
+          <div class="step-body">One click takes you straight to our booking calendar.</div>
         </div>
       </div>
       <div class="step">
@@ -318,21 +396,21 @@
         <div class="step-num">03</div>
         <div>
           <div class="step-title">We send you a short onboarding form</div>
-          <div class="step-body">So we know exactly what to look at before we dig in.</div>
+          <div class="step-body">So we know what to look at before we dig in.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <div>
           <div class="step-title">Receive your free audit + proposal</div>
-          <div class="step-body">A clear breakdown of what's working, what's not, and what we'd recommend — no pressure either way.</div>
+          <div class="step-body">What's working, what's not, and what we'd recommend.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-num">05</div>
         <div>
-          <div class="step-title">We build your AI Growth System — and manage it every month</div>
-          <div class="step-body">If it's a fit, we build the full system: website, SEO, social, ads, missed-call text-back, follow-up automation, and reputation management — with ongoing monthly management so it keeps performing after launch, not a one-time build we walk away from.</div>
+          <div class="step-title">We build your AI Growth System — and manage it monthly</div>
+          <div class="step-body">If it's a fit, we build your full AI Growth System — one connected system, managed every month so it keeps performing after launch.</div>
         </div>
       </div>
     </div>
@@ -352,7 +430,7 @@
           <span class="system-card-icon">🚗</span>
           <div class="system-card-title">Indio Car Wash</div>
           <div class="system-card-outcome">New site, live in 6 days</div>
-          <p class="system-card-body">A full custom-coded website built and launched in less than a week — fast enough that the business never had a gap in its online presence.</p>
+          <p class="system-card-body">A full custom-coded website, live in under a week — no gap in their online presence.</p>
         </div>
       </div>
       <div class="system-card" data-fade>
@@ -361,7 +439,7 @@
           <span class="system-card-icon">🎟️</span>
           <div class="system-card-title">K&amp;R Car Wash</div>
           <div class="system-card-outcome">Membership system, punch card, gift certificates</div>
-          <p class="system-card-body">Built the systems that turn one-time customers into repeat business — a membership program, a digital punch card, and gift certificates, all running through their site.</p>
+          <p class="system-card-body">Membership program, digital punch card, and gift certificates — all running through their site.</p>
         </div>
       </div>
       <div class="system-card" data-fade>
@@ -370,7 +448,7 @@
           <span class="system-card-icon">📈</span>
           <div class="system-card-title">Overcast Industriez</div>
           <div class="system-card-outcome">Client dashboard, landing pages, QR tracking</div>
-          <p class="system-card-body">A client-facing dashboard, a set of dedicated landing pages, and QR code tracking so the team can see exactly where their traffic is coming from.</p>
+          <p class="system-card-body">A client dashboard, landing pages, and QR tracking — so they know exactly where traffic comes from.</p>
         </div>
       </div>
     </div>
@@ -408,14 +486,14 @@
     <div class="text-center">
       <div class="section-label">Get Started</div>
       <h2 class="section-title">Get Your Free Audit</h2>
-      <p class="section-sub" style="margin-left:auto;margin-right:auto">One click. We'll show you exactly where you stand — and what your AI Growth System would look like.</p>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto">One click. We'll show you exactly where you stand.</p>
     </div>
     <div class="notice-bar">
       <span class="icon">⏳</span>
       <p>Limited to 5 free audits per month — so we can actually give each one our full attention.</p>
     </div>
     <a href="https://api.leadconnectorhq.com/widget/booking/6fJkJsGH5nA2RwmnnQAO" class="btn btn-primary btn-lg btn-full" id="bookCallBtn">Book My Free Audit Call</a>
-    <p style="font-size:13px;color:var(--gray-3);text-align:center;margin-top:8px">No spam. No pitch calls. Just a free, honest look at your business. Pricing is customized after your free audit.</p>
+    <p style="font-size:13px;color:var(--gray-3);text-align:center;margin-top:8px">No spam. No pitch calls. Just an honest look — pricing comes after your free audit.</p>
   </div>
 </section>
 
@@ -441,7 +519,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">BEACON<span>WEB</span></div>
-        <p>The AI Growth System for local businesses — website, automation, and follow-up, built and managed for you. It starts with a free, honest audit.</p>
+        <p>One AI Growth System for local businesses — built and managed for you. Starts with a free audit.</p>
         <div class="footer-contact">
           <a href="mailto:tristantrigg@beaconweb.co">tristantrigg@beaconweb.co</a>
           <a href="tel:+15412917030">(541) 291-7030</a>
